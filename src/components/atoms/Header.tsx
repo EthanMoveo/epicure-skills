@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Logo from './../../assets/icons/logo-epicure.svg';
 import HamburgerMenu from './../../assets/icons/hamburger-menu.svg';
 import ProfileIcon from './../../assets/icons/profile-icon.svg';
