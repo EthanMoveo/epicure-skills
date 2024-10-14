@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { colors } from './../../constants/colors';
 
 export const HeaderContainer = styled.header`
   display: flex;
@@ -29,7 +30,7 @@ export const MenuButton = styled.button`
   margin-left: 20px;
 
   @media (min-width: 1440px) {
-    display: none; /* Cacher le menu hamburger sur desktop */
+    display: none;
   }
 `;
 
@@ -58,16 +59,17 @@ export const LogoIcon = styled.img`
 
 export const PlatformName = styled.span`
   display: none;
-  margin-left: 10px; /* Espacement entre le logo et le nom de la plateforme */
+  margin-left: 10px; 
   font-size: 27px;
   font-weight: 200;
   font-family: 'Helvetica Neue';
   line-height: 32.64px;
-  color: #000000;
+  color: #${colors.PRIMARY.black};
+  margin-top: 15.5px;
+  margin-left: 15.07px;
 
   @media (min-width: 1440px) {
-    display: inline-block; /* Afficher le nom de la plateforme sur desktop */
-        margin-top: 15.5px;
+    display: inline-block; 
 
   }
 `;
@@ -78,22 +80,25 @@ export const NavLinks = styled.nav`
   @media (min-width: 1440px) {
     display: flex;
     gap: 30px;
-    margin-left: 20px; 
+    margin-left: 32px; 
     margin-top: 15.5px; 
   }
 `;
 
 export const NavLinkItem = styled.a`
   text-decoration: none;
-  color: black;
+  color: ${colors.PRIMARY.black};
   font-size: 18px;
   font-weight: 200;
   font-family: 'Helvetica Neue';
   font-family: Helvetica Neue;
   line-height: 21.76px;
   letter-spacing: 1.92px;
-  margin-top: 5.5px;
-`;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  gap: 32px;
+  `;
+
 
 export const IconGroup = styled.div`
   display: flex;
@@ -104,6 +109,7 @@ export const IconGroup = styled.div`
   @media (min-width: 1440px) {
     margin-top: 20px;
     margin-right: 0px;
+    gap: 24px;
   }
   
 `;
