@@ -103,7 +103,7 @@ export const NavLinkItem = styled.a`
 export const IconGroup = styled.div`
   display: flex;
   justify-content: flex-end;
-  gap: 32px;
+  gap: 20px;
   margin-right: 20px;
       
   @media (min-width: 1440px) {
