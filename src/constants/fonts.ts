@@ -1,93 +1,95 @@
+import {colors} from './colors';
+export const fontFamily = 'Helvetica Neue';
+
 export const fonts = {
-    DESKTOP: {
-      H1: {
-        fontFamily: 'Helvetica Neue',
-        fontWeight: 'Thin',
-        fontSize: '32px',
-        color: '#000000',
-      },
-      H2: {
-        fontFamily: 'Helvetica Neue',
-        fontWeight: 'Thin',
-        fontSize: '30px',
-        color: '#000000',
-      },
-      H3: {
-        fontFamily: 'Helvetica Neue',
-        fontWeight: 'Regular',
-        fontSize: '40px',
-        color: '#000000',
-      },
-      bodyText: {
-        fontFamily: 'Helvetica Neue',
-        fontWeight: 'Thin',
-        fontSize: '24px',
-        color: '#000000',
-      },
-      button: {
-        fontFamily: 'Helvetica Neue',
-        fontWeight: 'Thin',
-        fontSize: '16px',
-        color: '#FFFFFF',
-        backgroundColor: '#000000',
-      },
-      inputText: {
-        fontFamily: 'Helvetica Neue',
-        fontWeight: 'Thin',
-        fontSize: '16px',
-        color: '#000000',
-      },
-      labelText: {
-        fontFamily: 'Helvetica Neue',
-        fontWeight: 'Thin',
-        fontSize: '16px',
-        color: '#979797',
-      },
+  DESKTOP: {
+    H1: {
+      fontFamily,
+      fontWeight: '200', 
+      fontSize: '32px',
+      color: colors.PRIMARY.BLACK,
     },
-    MOBILE: {
-      H1: {
-        fontFamily: 'Helvetica Neue',
-        fontWeight: 'Thin',
-        fontSize: '24px',  
-        color: '#000000',
-      },
-      H2: {
-        fontFamily: 'Helvetica Neue',
-        fontWeight: 'Thin',
-        fontSize: '16px',  
-        color: '#000000',
-      },
-      H3: {
-        fontFamily: 'Helvetica Neue',
-        fontWeight: 'Regular',
-        fontSize: '18px',  
-        color: '#000000',
-      },
-      bodyText: {
-        fontFamily: 'Helvetica Neue',
-        fontWeight: 'Thin',
-        fontSize: '16px',  
-        color: '#000000',
-      },
-      button: {
-        fontFamily: 'Helvetica Neue',
-        fontWeight: 'Thin',
-        fontSize: '16px',
-        color: '#FFFFFF',
-        backgroundColor: '#000000',
-      },
-      inputText: {
-        fontFamily: 'Helvetica Neue',
-        fontWeight: 'Thin',
-        fontSize: '16px',
-        color: '#000000',
-      },
-      labelText: {
-        fontFamily: 'Helvetica Neue',
-        fontWeight: 'Thin',
-        fontSize: '14px',  
-        color: '#979797',
-      },
-    }
-  };
-  
+    H2: {
+      fontFamily,
+      fontWeight: '200',
+      fontSize: '30px',
+      color: colors.PRIMARY.BLACK,
+    },
+    H3: {
+      fontFamily,
+      fontWeight: '400',
+      fontSize: '40px',
+      color: colors.PRIMARY.BLACK,
+    },
+    bodyText: {
+      fontFamily,
+      fontWeight: '200',
+      fontSize: '24px',
+      color: colors.PRIMARY.BLACK,
+    },
+    button: {
+      fontFamily,
+      fontWeight: '200', 
+      fontSize: '16px',
+      color: '#FFFFFF',
+      backgroundColor: colors.PRIMARY.BLACK,
+    },
+    inputText: {
+      fontFamily,
+      fontWeight: '200', 
+      fontSize: '16px',
+      color: colors.PRIMARY.BLACK,
+    },
+    labelText: {
+      fontFamily,
+      fontWeight: '200', 
+      fontSize: '16px',
+      color: colors.PRIMARY.GRAY,
+    },
+  },
+  MOBILE: {
+    H1: {
+      fontFamily,
+      fontWeight: '200', 
+      fontSize: '24px',
+      color: colors.PRIMARY.BLACK,
+    },
+    H2: {
+      fontFamily,
+      fontWeight: '200', 
+      fontSize: '16px',
+      color: colors.PRIMARY.BLACK,
+    },
+    H3: {
+      fontFamily,
+      fontWeight: '400', 
+      fontSize: '18px',
+      color: colors.PRIMARY.BLACK,
+    },
+    bodyText: {
+      fontFamily,
+      fontWeight: '200', 
+      fontSize: '16px',
+      color: colors.PRIMARY.BLACK,
+    },
+    button: {
+      fontFamily,
+      fontWeight: '200', 
+      fontSize: '16px',
+      color: '#FFFFFF',
+      backgroundColor: colors.PRIMARY.BLACK,
+    },
+    inputText: {
+      fontFamily,
+      fontWeight: '200', 
+      fontSize: '16px',
+      color: colors.PRIMARY.BLACK,
+    },
+    labelText: {
+      fontFamily,
+      fontWeight: '200', 
+      fontSize: '14px',
+      color: colors.PRIMARY.GRAY,
+    },
+  },
+};

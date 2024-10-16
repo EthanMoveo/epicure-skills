@@ -1,16 +1,19 @@
 import styled from 'styled-components';
 import { colors } from './../../constants/colors';
+import { fonts } from './../../constants/fonts'
 
 export const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
+  position: sticky;
+  top: 0;
   height: 46px;
+  padding: 11px 20px;
 
   @media (min-width: 1440px) {
-    height: 36px;
-    margin: 14px 127px;
+    padding: 14px 127px;
+    height: 64px;
   }
 `;
 
@@ -22,12 +25,8 @@ export const LeftSection = styled.div`
 export const MenuButton = styled.button`
   background: none;
   border: none;
-  cursor: pointer;
   width: 24px;
   height: 24px;
-  margin-top: 11px;
-  margin-bottom: 11px;
-  margin-left: 20px;
 
   @media (min-width: 1440px) {
     display: none;
@@ -40,10 +39,8 @@ export const MenuIcon = styled.img`
 `;
 
 export const LogoIcon = styled.img`
-  width: 32.93px;
+  width: 32px;
   height: 32px;
-  margin: 7px 0;
-  
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -51,26 +48,20 @@ export const LogoIcon = styled.img`
   @media (min-width: 1440px) {
     position: static;
     transform: none;
-    margin-left: 0;
-    margin-top: 15.5px;
-
   }
 `;
 
 export const PlatformName = styled.span`
   display: none;
-  margin-left: 10px; 
+  font-weight: ${fonts.DESKTOP.H1.fontWeight};
+  font-family: ${fonts.DESKTOP.H1.fontFamily};
+  color: ${colors.PRIMARY.BLACK};
   font-size: 27px;
-  font-weight: 200;
-  font-family: 'Helvetica Neue';
-  line-height: 32.64px;
-  color: #${colors.PRIMARY.black};
-  margin-top: 15.5px;
-  margin-left: 15.07px;
-
+  line-height: 32px;
+  
   @media (min-width: 1440px) {
     display: inline-block; 
-
+    padding-left: 15px;
   }
 `;
 
@@ -79,44 +70,39 @@ export const NavLinks = styled.nav`
 
   @media (min-width: 1440px) {
     display: flex;
-    gap: 30px;
-    margin-left: 32px; 
-    margin-top: 15.5px; 
+    gap: 32px;
+    padding-left: 32px;
   }
 `;
 
 export const NavLinkItem = styled.a`
   text-decoration: none;
-  color: ${colors.PRIMARY.black};
+  color: ${colors.PRIMARY.BLACK};
+  font-weight: ${fonts.DESKTOP.bodyText.fontWeight};
+  font-family: ${fonts.DESKTOP.bodyText.fontFamily};
   font-size: 18px;
-  font-weight: 200;
-  font-family: 'Helvetica Neue';
-  font-family: Helvetica Neue;
   line-height: 21.76px;
   letter-spacing: 1.92px;
-  margin-top: 7px;
-  margin-bottom: 7px;
-  gap: 32px;
   `;
 
 
 export const IconGroup = styled.div`
   display: flex;
   justify-content: flex-end;
-  gap: 20px;
-  margin-right: 20px;
-      
+  gap: 20px;   
+
   @media (min-width: 1440px) {
-    margin-top: 20px;
-    margin-right: 0px;
     gap: 24px;
   }
-  
 `;
 
 export const Icon = styled.img`
   width: 20px;
   height: 20px;
-  margin: 13px 0;
 
+  @media (min-width: 1440px) {
+    width: 24px;
+    height: 24px;
+    padding: 13px 0px;
+  }
 `;
