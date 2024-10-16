@@ -52,12 +52,10 @@ export const LogoIcon = styled.img`
 `;
 
 export const PlatformName = styled.span`
-  display: none;
-  font-weight: ${fonts.DESKTOP.H1.fontWeight};
-  font-family: ${fonts.DESKTOP.H1.fontFamily};
-  color: ${colors.PRIMARY.BLACK};
+  ${fonts.DESKTOP.H1}
   font-size: 27px;
   line-height: 32px;
+  display: none;
   
   @media (min-width: 1440px) {
     display: inline-block; 
@@ -77,9 +75,7 @@ export const NavLinks = styled.nav`
 
 export const NavLinkItem = styled.a`
   text-decoration: none;
-  color: ${colors.PRIMARY.BLACK};
-  font-weight: ${fonts.DESKTOP.bodyText.fontWeight};
-  font-family: ${fonts.DESKTOP.bodyText.fontFamily};
+  ${fonts.DESKTOP.bodyText}
   font-size: 18px;
   line-height: 21.76px;
   letter-spacing: 1.92px;
