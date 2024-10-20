@@ -7,6 +7,11 @@ import RestaurantSwiper from "./components/RestaurantSwiper/RestaurantSwiper";
 import pic1 from './assets/pictures/claro.png';
 import icon1 from './assets/icons/more.svg'
 import GenericSection from "./components/GenericSection/GenericSection";
+import SectionIcons from "./components/SectionIcon/SectionIcons";
+
+import iconSpicy from './assets/icons/spicy-icon.svg';
+import iconVegetarian from './assets/icons/vegetarian-icon.svg';
+import iconVegan from './assets/icons/vegan-icon.svg';
 
 const restaurants = [
   {
@@ -48,7 +53,15 @@ const restaurants = [
 ];
 
 
+
+
 function App() {
+
+  const icons = [
+    { icon: iconSpicy , text: 'Spicy' },
+    { icon: iconVegetarian, text: 'Vegetarian' },
+    { icon: iconVegan,  text: 'Vegan' },
+  ];
 
   return (
     <>
@@ -61,6 +74,8 @@ function App() {
       text="All Restaurants" 
       icon={icon1}
     />
+        <SectionIcons icons={icons} />
+
     </>
   )
 }
