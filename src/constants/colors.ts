@@ -1,12 +1,13 @@
 export const colors = {
     PRIMARY: {
-      black: '#000000',
-      gray: '#979797',
+      BLACK: '#000000',
+      GRAY: '#979797',
+      WHITE: '#ffffff'
     },
     SECONDARY: {
-      lightBeige: '#F9F4EA',
-      yellow: '#E19D1A',
-      lightGray: '#FAFAFA',
+      LIGHTBEIGE: '#F9F4EA',
+      YELLOW: '#E19D1A',
+      LIGHTGRAY: '#FAFAFA',
     },
   };
   
