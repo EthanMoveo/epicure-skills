@@ -9,6 +9,8 @@ export const HeaderContainer = styled.header`
   top: 0;
   height: 46px;
   padding: 11px 20px;
+  background-color: white;
+  z-index: 1;
 
   @media (min-width: 1440px) {
     padding: 14px 127px;
