@@ -12,7 +12,7 @@ const GenericSwiper = <T,>({ items, renderCard }: GenericSwiperProps<T>) => {
   return (
     <section className={styles.swiperSection}>
       <Swiper
-        spaceBetween={20}
+        // spaceBetween={20}
         slidesPerView={1.3}
         centeredSlides={false}
         breakpoints={{
