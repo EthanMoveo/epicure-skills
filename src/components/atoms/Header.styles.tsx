@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { colors } from './../../constants/colors';
 import { fonts } from './../../constants/fonts'
 
 export const HeaderContainer = styled.header`
@@ -75,7 +74,7 @@ export const NavLinks = styled.nav`
 
 export const NavLinkItem = styled.a`
   text-decoration: none;
-  ${fonts.DESKTOP.bodyText}
+  ${fonts.DESKTOP.BODYTEXT}
   font-size: 18px;
   line-height: 21.76px;
   letter-spacing: 1.92px;

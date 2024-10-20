@@ -21,19 +21,19 @@ export const fonts = {
       fontSize: '40px',
       color: colors.PRIMARY.BLACK,
     },
-    bodyText: {
+    BODYTEXT: {
       fontFamily: fontFamilyPrimary,
       fontWeight: '200',
       fontSize: '24px',
       color: colors.PRIMARY.BLACK,
     },
-    inputText: {
+    INPUTTEXT: {
       fontFamily: fontFamilyPrimary,
       fontWeight: '200', 
       fontSize: '16px',
       color: colors.PRIMARY.BLACK,
     },
-    labelText: {
+    LABELTEXT: {
       fontFamily: fontFamilyPrimary,
       fontWeight: '200', 
       fontSize: '16px',
@@ -59,13 +59,13 @@ export const fonts = {
       fontSize: '18px',
       color: colors.PRIMARY.BLACK,
     },
-    bodyText: {
+    BODYTEXT: {
       fontFamily: fontFamilyPrimary,
       fontWeight: '200', 
       fontSize: '16px',
       color: colors.PRIMARY.BLACK,
     },
-    inputText: {
+    INPUTTEXT: {
       fontFamily: fontFamilyPrimary,
       fontWeight: '200', 
       fontSize: '16px',
