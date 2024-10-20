@@ -1,0 +1,102 @@
+@import './../../constants/fonts.scss';
+@import './../../constants/colors.scss';
+
+$card-width-mobile: 245px;
+$card-height-mobile: 232.8px;
+$card-width-desktop: 379px;
+$card-height-desktop: 405px;
+$star-size: 40px;
+$gap-mobile: 4px;
+$gap-desktop: 15px;
+
+.cardContainer {
+  width: $card-width-mobile;
+  height: $card-height-mobile;
+  overflow: hidden;
+  background-color: $secondary-light-beige;
+
+  @media (min-width: 1440px) {
+    width: $card-width-desktop;
+    height: $card-height-desktop;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.imageContainer {
+  width: 100%;
+  overflow: hidden;
+}
+
+.cardImage {
+  width: 100%;
+  object-fit: cover;
+}
+
+.cardContent {
+  text-align: left;
+  margin-left: 16px;
+  margin-top: 16px;
+
+  @media (min-width: 1440px) {
+    text-align: center;
+    margin-left: 0;
+    margin-top: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.restaurantName {
+  font-family: $mobile-h3-font-family;
+  font-size: $mobile-h3-font-size;
+  font-weight: $mobile-h3-font-weight;
+  color: $mobile-h3-color;
+  letter-spacing: 2.67px;
+  margin: 0;
+
+  @media (min-width: 1440px) {
+    font-family: $desktop-h3-font-family;
+    font-size: $desktop-h3-font-size;
+    font-weight: $desktop-h3-font-weight;
+    color: $desktop-h3-color;
+  }
+}
+
+.chefName {
+  font-family: $mobile-body-font-family;
+  font-size: $mobile-body-font-size;
+  font-weight: $mobile-body-font-weight;
+  color: $primary-gray;
+  letter-spacing: 1.97px;
+  margin-top: 8px;
+
+  @media (min-width: 1440px) {
+    font-family: $desktop-body-font-family;
+    font-size: $desktop-body-font-size;
+    font-weight: $desktop-body-font-weight;
+    color: $primary-gray;
+    margin-bottom: 0;
+  }
+}
+
+.starsContainer {
+  gap: $gap-mobile;
+  margin-top: 8px;
+  display: none; 
+
+  @media (min-width: 1440px) {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    margin-top: $gap-desktop;
+  }
+}
+
+.star {
+  width: $star-size;
+  height: $star-size;
+}

@@ -1,9 +1,9 @@
 import styled, {css} from 'styled-components';
-import { colors } from './../constants/colors'; 
-import { fonts } from './../constants/fonts'; 
+import { colors } from './../../constants/colors'; 
+import { fonts } from './../../constants/fonts'; 
 
-import backgroundImageMobile from './../assets/pictures/Hero.png'
-import backgroundImageDesktop from './../assets/pictures/Hero-Desktop.png'
+import backgroundImageMobile from './../../assets/pictures/Hero.png'
+import backgroundImageDesktop from './../../assets/pictures/Hero-Desktop.png'
 
 export const HeroContainer = styled.section`
   background-image: url(${backgroundImageMobile});
