@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { fonts } from './../../constants/fonts'
+import { fonts } from './../../constants/fonts';
+import { colors } from './../../constants/colors';
 
 export const HeaderContainer = styled.header`
   display: flex;
@@ -9,7 +10,7 @@ export const HeaderContainer = styled.header`
   top: 0;
   height: 46px;
   padding: 11px 20px;
-  background-color: white;
+  background-color: ${colors.PRIMARY.WHITE};
   z-index: 1;
 
   @media (min-width: 1440px) {

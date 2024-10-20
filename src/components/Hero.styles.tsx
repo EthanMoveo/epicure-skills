@@ -5,10 +5,6 @@ import { fonts } from './../constants/fonts';
 import backgroundImageMobile from './../assets/pictures/Hero.png'
 import backgroundImageDesktop from './../assets/pictures/Hero-Desktop.png'
 
-const backgroundColorContainer = css`
-  background-color: #FFFFFFE0;
-  opacity: 0.88;
-  `;
 
 export const HeroContainer = styled.section`
   background-image: url(${backgroundImageMobile});
@@ -29,7 +25,8 @@ export const HeroContainer = styled.section`
 
 
 export const TextContainer = styled.div`
-  ${backgroundColorContainer}
+  background-color: ${colors.SECONDARY.LIGHTWHITE};
+  opacity: 0.88;
   padding: 16px 10px;
   width: 335px;
   
@@ -67,9 +64,9 @@ export const SearchInputContainer = styled.div`
   padding: 6px 12px;
   gap: 8px;
   width: 315px;
-  border: 0.5px solid #000000;
-  ${backgroundColorContainer};
-  
+  border: 0.5px solid ${colors.PRIMARY.BLACK} ;
+  background-color: ${colors.SECONDARY.LIGHTWHITE};
+  opacity: 0.88;  
   @media (min-width: 1440px) {
     width: 505px;
     gap: 16px;

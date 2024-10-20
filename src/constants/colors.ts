@@ -8,6 +8,7 @@ export const colors = {
       LIGHTBEIGE: '#F9F4EA',
       YELLOW: '#E19D1A',
       LIGHTGRAY: '#FAFAFA',
+      LIGHTWHITE: '#FFFFFFE0'
     },
   };
   
