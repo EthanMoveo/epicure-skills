@@ -8,6 +8,7 @@ import pic1 from './assets/pictures/claro.png';
 import icon1 from './assets/icons/more.svg'
 import GenericSection from "./components/GenericSection/GenericSection";
 import SectionIcons from "./components/SectionIcon/SectionIcons";
+import AboutUs from "./components/AboutUs/AboutUs";
 
 import iconSpicy from './assets/icons/spicy-icon.svg';
 import iconVegetarian from './assets/icons/vegetarian-icon.svg';
@@ -74,8 +75,8 @@ function App() {
       text="All Restaurants" 
       icon={icon1}
     />
-        <SectionIcons icons={icons} />
-
+    <SectionIcons icons={icons} />
+    <AboutUs />
     </>
   )
 }
