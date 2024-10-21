@@ -4,7 +4,7 @@
 .aboutUs {
     background-color: $secondary-light-gray ;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     padding: 24px 27px 48px 20px; 
     justify-content: flex-start;
     
@@ -12,19 +12,20 @@
         flex-direction: row;
         padding: 40px 129px 40px 132px;
         align-items:  center;
-
-
     }
 
 }
 
 .description {
+    display: flex;
+    flex-direction: column-reverse;
 
     @media (min-width: 1440px) {
+        flex-direction: column;
         width: 918px;
     }
 
-    h1 {
+    & h1 {
             margin: 0 0 16px 0;
             font-family: $mobile-h2-font-family;
             font-weight: $mobile-h2-font-weight;
@@ -43,7 +44,7 @@
             }
         }
     
-    p {
+    & p {
         font-family: $mobile-body-font-family;
         font-weight: $mobile-body-font-weight;
         font-size: 18px;
@@ -54,15 +55,13 @@
         font-family: $desktop-body-font-family;
         font-weight: $desktop-body-font-weight;
         font-size: 20px;
-        letter-spacing: 2.14px;
-        line-height: 30px;
         width: 569px;
         }
     }
 }
 
 .downloadsDesktop {
-    display: none;
+    margin-bottom: 48px;
 
     @media (min-width: 1440px) {
         display: flex;
@@ -71,57 +70,28 @@
         margin-top: 16px;
     }
 
-    img {
+    & img {
         width: 180px;
         height: 52px;
     }
 }
 
 .logoDesktop {
-    display: none;
+    margin-bottom: 32px;
     
-        @media (min-width: 1440px) {
-            display: flex;
-        }
-    img {
-
+    @media (min-width: 1440px) {
+        display: flex;
+    
+    }
+    & img {
+        width: 102px;
+        height: 95px;
+        
         @media (min-width: 1440px) {
             width: 178px;
             height: 166px;
             padding-left: 83px;
         }
-    }
-
-}
-
-.downloadsMobile {
-
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    margin-bottom: 48px;
-    @media (min-width: 1440px) {
-        display: none;
-    }
-
-    img {
-        width: 180px;
-        height: 52px;
-    }
-}
-
-.logoMobile {
-    display: flex;
-    margin-bottom: 32px;
-    
-        @media (min-width: 1440px) {
-        display: none;
-        }
-    img {
-
-            width: 102px;
-            height: 95px;
-    
     }
 
 }

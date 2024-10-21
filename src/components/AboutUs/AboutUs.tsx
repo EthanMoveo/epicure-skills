@@ -10,28 +10,23 @@ import googleIcon from './../../assets/icons/google-icon.svg';
 const AboutUs: React.FC = () => {
   return (
     <div className={styles.aboutUs}>
-      <div className={styles.logoMobile}>
-        <img src={logoEpicure} />
-      </div>
-      <div className={styles.downloadsMobile}>
-        <img src={appleIcon} />
-        <img src={appleIcon} />
-      </div>
       <div className={styles.description}>
-        <h1>About Us</h1>
-        <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a lacus vel justo fermentum bibendum non 
-        eu ipsum. Cras porta malesuada eros, eget blandit
-        turpis suscipit at.  Vestibulum sed massa in magna sodales porta.  Vivamus elit urna,
-        <br />
-        dignissim a vestibulum.
-        <br /> <br />
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a lacus vel justo fermentum bibendum no
-        eu ipsum. Cras porta malesuada eros.
-        <br /> <br />
-        </p>
+        <div>
+          <h1>About Us</h1>
+          <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a lacus vel justo fermentum bibendum non 
+          eu ipsum. Cras porta malesuada eros, eget blandit
+          turpis suscipit at.  Vestibulum sed massa in magna sodales porta.  Vivamus elit urna,
+          <br />
+          dignissim a vestibulum.
+          <br /> <br />
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a lacus vel justo fermentum bibendum no
+          eu ipsum. Cras porta malesuada eros.
+          <br /> <br />
+          </p>
+        </div>
         <div className={styles.downloadsDesktop}>
-            <img src={appleIcon} />
+            <img src={googleIcon} />
             <img src={appleIcon} />
         </div>
       </div>
