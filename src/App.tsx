@@ -13,7 +13,7 @@ import AboutUs from "./components/AboutUs/AboutUs";
 import iconSpicy from './assets/icons/spicy-icon.svg';
 import iconVegetarian from './assets/icons/vegetarian-icon.svg';
 import iconVegan from './assets/icons/vegan-icon.svg';
-
+import Footer from "./components/Footer/Footer";
 const restaurants = [
   {
     picture: pic1,
@@ -77,6 +77,7 @@ function App() {
     />
     <SectionIcons icons={icons} />
     <AboutUs />
+    <Footer />
     </>
   )
 }

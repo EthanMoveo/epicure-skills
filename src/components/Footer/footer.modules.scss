@@ -1,0 +1,43 @@
+@import './../../constants/colors.scss';
+@import './../../constants/fonts.scss';
+
+.footer {
+    background-color: $primary-white;
+    padding: 32px 0 24px 19px;
+    display: flex;
+    justify-content: flex-start;
+    @media (min-width: 1440px) {        
+        border-top: 0.2px solid $primary-gray;
+        justify-content: center;
+        padding: 31px 0;
+
+
+    }
+  
+    &__links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      margin: 0;
+      padding: 0;
+
+      @media (min-width: 1440px) {
+        flex-direction: row;
+      }
+    }
+  
+    &__link-item {
+      margin: 0;
+    }
+  
+    &__link {
+      text-decoration: none;
+      font-size: 18px;
+      letter-spacing: 1.92px;
+      font-family: $desktop-h1-font-family;
+      font-weight: $desktop-h1-font-weight;
+      color: $desktop-h1-color;
+    }
+  }
+  
