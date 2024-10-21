@@ -1,5 +1,5 @@
 import React from 'react';
-import GenericCard from './../GenericCard/GenericCard';
+import GenericCard from '../SharedComponents/GenericCard/GenericCard';
 import fullStar from './../../assets/icons/star-full.svg';
 import emptyStar from './../../assets/icons/star-empty.svg';
 import styles from './restaurantCard.module.scss';

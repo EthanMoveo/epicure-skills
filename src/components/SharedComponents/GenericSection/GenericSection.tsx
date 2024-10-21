@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styles from './genericSection.module.scss';
-import moreIcon from './../../assets/icons/more.svg'
+import moreIcon from './../../../assets/icons/more.svg'
 
 interface GenericSectionProps {
   title: string; 

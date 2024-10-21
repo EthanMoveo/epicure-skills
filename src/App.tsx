@@ -1,9 +1,9 @@
 import Header from "./components/Header/Header"
 import Hero from "./components/Hero/Hero"
-import './App.css'
 import RestaurantSwiper from "./components/RestaurantSwiper/RestaurantSwiper";
-import GenericSection from "./components/GenericSection/GenericSection";
+import GenericSection from "./components/SharedComponents/GenericSection/GenericSection";
 import { restaurants } from "./constants/restaurants";
+import './App.css'
 
 
 function App() {

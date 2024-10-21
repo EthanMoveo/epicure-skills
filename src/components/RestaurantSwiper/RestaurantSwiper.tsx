@@ -1,6 +1,6 @@
 import React from 'react';
 import RestaurantCard from './../RestaurantCard/RestaurantCard';
-import GenericSwiper from './../GenericSwiper/GenericSwiper';
+import GenericSwiper from '../SharedComponents/GenericSwiper/GenericSwiper';
 
 interface Restaurant {
   picture: string;
