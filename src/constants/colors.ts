@@ -1,4 +1,4 @@
-export const colors = {
+export const COLORS = {
     PRIMARY: {
       BLACK: '#000000',
       GRAY: '#979797',

@@ -1,7 +1,7 @@
-import styled, {css} from 'styled-components';
+import styled from 'styled-components';
 
-import { colors } from './../constants/colors'; 
-import { fonts } from './../constants/fonts'; 
+import { COLORS } from './../constants/colors'; 
+import { FONTS } from './../constants/fonts'; 
 import backgroundImageMobile from './../assets/pictures/Hero.png'
 import backgroundImageDesktop from './../assets/pictures/Hero-Desktop.png'
 
@@ -25,7 +25,7 @@ export const HeroContainer = styled.section`
 
 
 export const TextContainer = styled.div`
-  background-color: ${colors.SECONDARY.LIGHTWHITE};
+  background-color: ${COLORS.SECONDARY.LIGHTWHITE};
   opacity: 0.88;
   padding: 16px 10px;
   width: 335px;
@@ -41,12 +41,12 @@ export const TextContainer = styled.div`
 `;
 
 export const HeroText = styled.h1`
-  ${fonts.MOBILE.H1}
+  ${FONTS.MOBILE.H1}
   letter-spacing: 1.97px;
 
   
   @media (min-width: 1440px) {
-    ${fonts.DESKTOP.H1}
+    ${FONTS.DESKTOP.H1}
     padding: 0px 186px;
   }
 `;
@@ -64,8 +64,8 @@ export const SearchInputContainer = styled.div`
   padding: 6px 12px;
   gap: 8px;
   width: 315px;
-  border: 0.5px solid ${colors.PRIMARY.BLACK} ;
-  background-color: ${colors.SECONDARY.LIGHTWHITE};
+  border: 0.5px solid ${COLORS.PRIMARY.BLACK} ;
+  background-color: ${COLORS.SECONDARY.LIGHTWHITE};
   opacity: 0.88;  
   @media (min-width: 1440px) {
     width: 505px;
@@ -87,27 +87,21 @@ export const SearchIconImg = styled.img`
 
 export const SearchInput = styled.input`
   border: none;
-  ${fonts.MOBILE.H1}
-  font-size: 12px;
+  ${FONTS.MOBILE.INPUTTEXT}
   width: 100%;
-  
   outline: none;
 
   @media (min-width: 1440px) {
-    ${fonts.DESKTOP.H1}
-    font-size: 24px;
+    ${FONTS.DESKTOP.INPUTTEXT}
     padding: 5px 0px;
 
   }
 
   &::placeholder {
-    ${fonts.MOBILE.H1}
-    font-size: 12px;
-    letter-spacing: 1.29px;
+    ${FONTS.MOBILE.INPUTTEXT}
 
     @media (min-width: 1440px) {
-      ${fonts.DESKTOP.H1}
-      font-size: 24px;
+      ${FONTS.DESKTOP.INPUTTEXT}
       
   }
 }

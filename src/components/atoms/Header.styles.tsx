@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { fonts } from './../../constants/fonts';
-import { colors } from './../../constants/colors';
+import { FONTS } from './../../constants/fonts';
+import { COLORS } from './../../constants/colors';
 
 export const HeaderContainer = styled.header`
   display: flex;
@@ -10,7 +10,7 @@ export const HeaderContainer = styled.header`
   top: 0;
   height: 46px;
   padding: 11px 20px;
-  background-color: ${colors.PRIMARY.WHITE};
+  background-color: ${COLORS.PRIMARY.WHITE};
   z-index: 1;
 
   @media (min-width: 1440px) {
@@ -54,7 +54,7 @@ export const LogoIcon = styled.img`
 `;
 
 export const PlatformName = styled.span`
-  ${fonts.DESKTOP.H1}
+  ${FONTS.DESKTOP.H1}
   font-size: 27px;
   line-height: 32px;
   display: none;
@@ -77,7 +77,7 @@ export const NavLinks = styled.nav`
 
 export const NavLinkItem = styled.a`
   text-decoration: none;
-  ${fonts.DESKTOP.BODYTEXT}
+  ${FONTS.DESKTOP.BODYTEXT}
   font-size: 18px;
   line-height: 21.76px;
   letter-spacing: 1.92px;
