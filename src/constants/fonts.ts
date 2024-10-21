@@ -1,81 +1,83 @@
-import {colors} from './colors';
-export const fontFamilyPrimary = 'Helvetica Neue';
+import { COLORS } from './colors';
+export const FONT_FAMILY_PRIMARY = 'Helvetica Neue';
 
-export const fonts = {
+export const FONTS = {
   DESKTOP: {
     H1: {
-      fontFamily: fontFamilyPrimary,
+      fontFamily: FONT_FAMILY_PRIMARY,
       fontWeight: '200', 
       fontSize: '32px',
-      color: colors.PRIMARY.BLACK,
+      color: COLORS.PRIMARY.BLACK,
     },
     H2: {
-      fontFamily: fontFamilyPrimary,
+      fontFamily: FONT_FAMILY_PRIMARY,
       fontWeight: '200',
       fontSize: '30px',
-      color: colors.PRIMARY.BLACK,
+      color: COLORS.PRIMARY.BLACK,
     },
     H3: {
-      fontFamily: fontFamilyPrimary,
+      fontFamily: FONT_FAMILY_PRIMARY,
       fontWeight: '400',
       fontSize: '40px',
-      color: colors.PRIMARY.BLACK,
+      color: COLORS.PRIMARY.BLACK,
     },
     BODYTEXT: {
-      fontFamily: fontFamilyPrimary,
+      fontFamily: FONT_FAMILY_PRIMARY,
       fontWeight: '200',
       fontSize: '24px',
-      color: colors.PRIMARY.BLACK,
+      color: COLORS.PRIMARY.BLACK,
     },
     INPUTTEXT: {
-      fontFamily: fontFamilyPrimary,
+      fontFamily: FONT_FAMILY_PRIMARY,
       fontWeight: '200', 
-      fontSize: '16px',
-      color: colors.PRIMARY.BLACK,
+      fontSize: '24px',
+      letterSpacing: '1.29px',
+      color: COLORS.PRIMARY.BLACK,
     },
     LABELTEXT: {
-      fontFamily: fontFamilyPrimary,
+      fontFamily: FONT_FAMILY_PRIMARY,
       fontWeight: '200', 
       fontSize: '16px',
-      color: colors.PRIMARY.GRAY,
+      color: COLORS.PRIMARY.GRAY,
     },
   },
   MOBILE: {
     H1: {
-      fontFamily: fontFamilyPrimary,
+      fontFamily: FONT_FAMILY_PRIMARY,
       fontWeight: '200', 
       fontSize: '24px',
-      color: colors.PRIMARY.BLACK,
+      color: COLORS.PRIMARY.BLACK,
     },
     H2: {
-      fontFamily: fontFamilyPrimary,
+      fontFamily: FONT_FAMILY_PRIMARY,
       fontWeight: '200', 
       fontSize: '16px',
-      color: colors.PRIMARY.BLACK,
+      color: COLORS.PRIMARY.BLACK,
     },
     H3: {
-      fontFamily: fontFamilyPrimary,
+      fontFamily: FONT_FAMILY_PRIMARY,
       fontWeight: '400', 
       fontSize: '18px',
-      color: colors.PRIMARY.BLACK,
+      color: COLORS.PRIMARY.BLACK,
     },
     BODYTEXT: {
-      fontFamily: fontFamilyPrimary,
+      fontFamily: FONT_FAMILY_PRIMARY,
       fontWeight: '200', 
       fontSize: '16px',
-      color: colors.PRIMARY.BLACK,
+      color: COLORS.PRIMARY.BLACK,
     },
     INPUTTEXT: {
-      fontFamily: fontFamilyPrimary,
+      fontFamily: FONT_FAMILY_PRIMARY,
       fontWeight: '200', 
-      fontSize: '16px',
-      color: colors.PRIMARY.BLACK,
+      fontSize: '12px',
+      letterSpacing: '1.29px',
+      color: COLORS.PRIMARY.BLACK,
     },
-    labelText: {
-      fontFamily: fontFamilyPrimary,
+    LABELTEXT: {
+      fontFamily: FONT_FAMILY_PRIMARY,
       fontWeight: '200', 
       fontSize: '14px',
-      color: colors.PRIMARY.GRAY,
+      color: COLORS.PRIMARY.GRAY,
     },
   },
 };
