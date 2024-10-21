@@ -8,8 +8,6 @@ import backgroundImageDesktop from './../assets/pictures/Hero-Desktop.png'
 
 export const HeroContainer = styled.section`
   background-image: url(${backgroundImageMobile});
-  background-size: cover;
-  background-position: center;
   text-align: center;
   display: flex;
   flex-direction: column;
