@@ -1,11 +1,13 @@
 import Header from "./components/atoms/Header"
-import './App.css';
+import Hero from "./components/Hero"
+import './App.css'
 
 function App() {
 
   return (
     <>
     <Header />
+    <Hero />
     </>
   )
 }
