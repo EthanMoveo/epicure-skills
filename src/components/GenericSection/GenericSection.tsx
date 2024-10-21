@@ -1,6 +1,5 @@
 import React from 'react';
 
-import SectionTitle from './../SectionTitle/SectionTitle'; 
 import styles from './genericSection.module.scss';
 import moreIcon from './../../assets/icons/more.svg'
 
@@ -13,7 +12,7 @@ interface GenericSectionProps {
 const GenericSection: React.FC<GenericSectionProps> = ({ title, swiperComponent, text }) => {
   return (
     <section className={styles.genericSection}>
-      <SectionTitle>{title}</SectionTitle> 
+      <h1 className={styles.title}>{title}</h1> 
       {swiperComponent}
       <div className={styles.optionalText}> 
        {text && <div className={styles.additionalText}>{text}</div>}

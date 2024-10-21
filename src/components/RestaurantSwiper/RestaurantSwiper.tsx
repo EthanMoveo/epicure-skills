@@ -22,7 +22,7 @@ const RestaurantSwiper: React.FC<RestaurantSwiperProps> = ({ restaurants }) => {
           key={index}
           picture={restaurant.picture}
           title={restaurant.restaurantName}
-          subtitle={restaurant.chefName}
+          chefName={restaurant.chefName}
           rating={restaurant.rating}
         />
       )}

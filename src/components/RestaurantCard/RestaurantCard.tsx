@@ -4,10 +4,10 @@ import fullStar from './../../assets/icons/star-full.svg';
 import emptyStar from './../../assets/icons/star-empty.svg';
 import styles from './restaurantCard.module.scss';
 
-const RestaurantCard: React.FC<{ picture: string; title: string; subtitle: string; rating: number }> = ({
+const RestaurantCard: React.FC<{ picture: string; title: string; chefName: string; rating: number }> = ({
   picture,
   title,
-  subtitle,
+  chefName,
   rating,
 }) => {
   const stars = (
@@ -25,12 +25,12 @@ const RestaurantCard: React.FC<{ picture: string; title: string; subtitle: strin
   return (
     <GenericCard 
       picture={picture} 
-      title={title} 
-      className={styles.cardRestaurant} 
-      contentClassName={styles.cardContentRestaurant} 
     >
-      <p className={styles.chefName}>{subtitle}</p>
+      <div className={styles.cardContentRestaurant}>
+        <h2 className={styles.cardTitle}>{title}</h2>
+        <p className={styles.chefName}>{chefName}</p>
       {stars}
+      </div>
     </GenericCard>
   );
 };

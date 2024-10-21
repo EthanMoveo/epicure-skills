@@ -7,6 +7,10 @@
         padding: 80px 128px;
     }
 
+    & .title {
+        @include section-title;
+    }
+
     & .optionalText {
         display: flex;
         gap: 12px;
@@ -21,13 +25,13 @@
     }
 
     & .additionalText {
-        font-family: $mobile-body-font-family;
-        font-size: $mobile-body-font-size;
+        @include mobile-body;
         font-weight: 400;
         letter-spacing: 2px;
+        
         @media (min-width: 1440px) {
-            font-family: $desktop-body-font-family;
-            font-size: $desktop-body-font-size;
+            @include desktop-body;
+            font-weight: 400;
         }
     }
 
