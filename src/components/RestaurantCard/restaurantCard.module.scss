@@ -1,6 +1,19 @@
 @import './../../constants/fonts.scss';
 
 
+.cardRestaurant {
+  img:not(.cardContentRestaurant img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+    @media (min-width: 1440px) {
+      width: 379px;
+      height: 236px;
+    }
+  }
+}
+
 .cardContentRestaurant {
   padding: 16px 0 16px 16px;
   

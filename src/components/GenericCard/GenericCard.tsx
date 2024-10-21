@@ -5,7 +5,7 @@ interface GenericCardProps {
   picture: string;
   title: string;
   className?: string;
-  contentClassName?: string; // Classe supplémentaire pour cardContent
+  contentClassName?: string;
   children?: React.ReactNode;
 }
 
