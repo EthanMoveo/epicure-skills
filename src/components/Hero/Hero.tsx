@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchIcon from './../assets/icons/search-icon.svg' // Assurez-vous d'avoir l'icône de recherche ici
+import SearchIcon from './../../assets/icons/search-icon.svg' // Assurez-vous d'avoir l'icône de recherche ici
 import { HeroContainer, TextContainer, HeroText, SearchContainer, SearchInputContainer, SearchIconImg, SearchInput } from './Hero.styles';
 
 const Hero: React.FC = () => {
