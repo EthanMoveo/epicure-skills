@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 import { COLORS } from './../../constants/colors'; 
 import { FONTS } from './../../constants/fonts'; 
-import backgroundImageMobile from './../assets/pictures/Hero.png'
-import backgroundImageDesktop from './../assets/pictures/Hero-Desktop.png'
+import backgroundImageMobile from './../../assets/pictures/Hero.png'
+import backgroundImageDesktop from './../../assets/pictures/Hero-Desktop.png'
 
 
 export const HeroContainer = styled.section`
