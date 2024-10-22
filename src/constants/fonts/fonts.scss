@@ -5,7 +5,7 @@ $primary-font : 'Helvetica Neue';
 
 @mixin desktop-h1 {
     font-family: $primary-font;
-    font-weight: 204000;
+    font-weight: 400;
     font-size: 40px;
     color: $primary-black;
 }
