@@ -1,0 +1,22 @@
+.swiperContainer {
+    margin-top: 17px;
+    @media (min-width: 1440px) {
+        margin-top: 40px;
+    }
+
+    & .swiperSlide {
+        display: flex;
+        align-items: center;
+
+        @media (min-width: 1440px) {
+            justify-content: center;
+
+            
+
+        }
+    }
+    
+
+}
+
+

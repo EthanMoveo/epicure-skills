@@ -1,0 +1,46 @@
+@import './../../../constants/fonts/fonts.scss';
+
+.genericSection { 
+    padding: 48px 0px 0px 20px;
+
+    @media (min-width: 1440px) {
+        padding: 80px 128px;
+    }
+
+    & .title {
+        @include mobile-h2;
+
+        @media (min-width: 1440px) {
+            @include desktop-h2
+        }
+    }
+
+    & .optionalText {
+        display: flex;
+        gap: 12px;
+        margin-top: 18px;
+        align-items: center;
+
+        @media (min-width: 1440px) {
+            justify-content: flex-end;
+            margin-top: 40px;
+
+        }
+    }
+
+    & .additionalText {
+        @include mobile-body;
+        font-weight: 400;
+        letter-spacing: 2px;
+        
+        @media (min-width: 1440px) {
+            @include desktop-body;
+            font-weight: 400;
+        }
+    }
+
+    & img {
+        width: 24px;
+        height: 24px;
+    }
+}

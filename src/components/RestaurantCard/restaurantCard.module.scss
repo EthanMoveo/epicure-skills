@@ -1,0 +1,43 @@
+@import './../../constants/fonts/fonts.scss';
+
+.cardContentRestaurant {
+  padding: 16px 0 16px 16px;
+
+  @media (min-width: 1440px) {
+    padding: 18px 0 0 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  & .cardTitle {
+    @include mobile-h1;
+    letter-spacing: 2.67px;
+    text-align: left;
+
+    @media (min-width: 1440px) {
+      @include desktop-h1;
+    }
+  }
+
+  & .chefName {
+    @include mobile-body;
+    margin: 8px 0 0 0;
+
+    @media (min-width: 1440px) {
+      @include desktop-body;
+    }
+  }
+
+  & .starContainer {
+    display: none;
+    margin: 8px 0 18px 0;
+
+    @media (min-width: 1440px) {
+      display: flex;
+      gap: 4px;
+    }
+  }
+}

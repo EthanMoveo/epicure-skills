@@ -1,13 +1,15 @@
 import styled from 'styled-components';
 
-import { COLORS } from './../constants/colors'; 
-import { FONTS } from './../constants/fonts'; 
-import backgroundImageMobile from './../assets/pictures/Hero.png'
-import backgroundImageDesktop from './../assets/pictures/Hero-Desktop.png'
+import { COLORS } from '../../constants/colors/colors'; 
+import { FONTS } from '../../constants/fonts/fonts'; 
+import backgroundImageMobile from './../../assets/pictures/Hero.png'
+import backgroundImageDesktop from './../../assets/pictures/Hero-Desktop.png'
 
 
 export const HeroContainer = styled.section`
   background-image: url(${backgroundImageMobile});
+  background-repeat: no-repeat;
+  background-size: cover;
   text-align: center;
   display: flex;
   flex-direction: column;
