@@ -1,6 +1,5 @@
 import React from 'react';
-import SectionTitle from './../SectionTitle/SectionTitle';
-import GenericIcon from './../GenericIcon/GenericIcon';
+import GenericIcon from '../SharedComponents/GenericIcon/GenericIcon.component';
 import styles from './sectionIcons.module.scss';
 
 interface SectionIconsProps {
@@ -10,7 +9,7 @@ interface SectionIconsProps {
 const SectionIcons: React.FC<SectionIconsProps> = ({ icons }) => {
   return (
     <section className={styles.iconSection}>
-      <SectionTitle>THE MEANING OF OUR ICONS:</SectionTitle>
+      <div className={styles.title}>THE MEANING OF OUR ICONS:</div>
       <div className={styles.iconContainer}>
         {icons.map((item, index) => (
           <GenericIcon key={index} icon={item.icon} text={item.text} />

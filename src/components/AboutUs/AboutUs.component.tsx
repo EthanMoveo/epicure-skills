@@ -1,7 +1,6 @@
 import React from 'react';
 
 import styles from './aboutUs.module.scss';
-import SectionTitle from '../SectionTitle/SectionTitle';
 import logoEpicure from './../../assets/icons/about-logo-epicure.svg';
 import appleIcon from './../../assets/icons/apple-icon.svg';
 import googleIcon from './../../assets/icons/google-icon.svg';
@@ -12,7 +11,7 @@ const AboutUs: React.FC = () => {
     <div className={styles.aboutUs}>
       <div className={styles.description}>
         <div>
-          <h1>About Us</h1>
+          <div className={styles.title}>About Us</div>
           <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a lacus vel justo fermentum bibendum non 
           eu ipsum. Cras porta malesuada eros, eget blandit

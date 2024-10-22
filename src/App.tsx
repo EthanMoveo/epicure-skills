@@ -2,24 +2,16 @@ import Header from "./components/Header/Header.component"
 import Hero from "./components/Hero/Hero.component"
 import RestaurantSwiper from "./components/RestaurantSwiper/RestaurantSwiper.component";
 import GenericSection from "./components/SharedComponents/GenericSection/GenericSection.component";
+import SectionIcons from "./components/SectionIcons/SectionIcons.component";
+import AboutUs from "./components/AboutUs/AboutUs.component";
+import Footer from "./components/Footer/Footer.component";
 import { restaurants } from "./constants/data/restaurants";
+import { icons } from "./constants/data/icons";
 import './App.css'
-import SectionIcons from "./components/SectionIcon/SectionIcons";
-import AboutUs from "./components/AboutUs/AboutUs";
-
-import iconSpicy from './assets/icons/spicy-icon.svg';
-import iconVegetarian from './assets/icons/vegetarian-icon.svg';
-import iconVegan from './assets/icons/vegan-icon.svg';
-import Footer from "./components/Footer/Footer";
 
 
 function App() {
 
-  const icons = [
-    { icon: iconSpicy , text: 'Spicy' },
-    { icon: iconVegetarian, text: 'Vegetarian' },
-    { icon: iconVegan,  text: 'Vegan' },
-  ];
 
   return (
     <>

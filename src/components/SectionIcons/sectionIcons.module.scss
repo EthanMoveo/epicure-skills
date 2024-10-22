@@ -1,5 +1,5 @@
-@import './../../constants/colors.scss';
-@import './../../constants/fonts.scss';
+@import './../../constants/colors/colors.scss';
+@import './../../constants/fonts/fonts.scss';
 
 .iconSection {
     margin-top: 46px;
@@ -10,6 +10,14 @@
         margin-top: 80px;
         padding: 36px 0px;
     }
+
+    & .title {
+      @include mobile-h2;
+
+      @media (min-width: 1440px) {
+          @include desktop-h2
+      }
+  }
   }
   
   .iconContainer {
