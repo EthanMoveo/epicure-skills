@@ -1,10 +1,18 @@
-@import './../../constants/fonts.scss';
+@import './../../../constants/fonts/fonts.scss';
 
 .genericSection { 
     padding: 48px 0px 0px 20px;
 
     @media (min-width: 1440px) {
         padding: 80px 128px;
+    }
+
+    & .title {
+        @include mobile-h2;
+
+        @media (min-width: 1440px) {
+            @include desktop-h2
+        }
     }
 
     & .optionalText {
@@ -21,13 +29,18 @@
     }
 
     & .additionalText {
-        font-family: $mobile-body-font-family;
-        font-size: $mobile-body-font-size;
+        @include mobile-body;
         font-weight: 400;
         letter-spacing: 2px;
+        
         @media (min-width: 1440px) {
-            font-family: $desktop-body-font-family;
-            font-size: $desktop-body-font-size;
+            @include desktop-body;
+            font-weight: 400;
         }
+    }
+
+    & img {
+        width: 24px;
+        height: 24px;
     }
 }
