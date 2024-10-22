@@ -21,7 +21,7 @@ function App() {
       text="All Restaurants" 
     />
     <GenericSection
-      title="Signaturew dish of:" 
+      title="Signature dish of:" 
       swiperComponent={<DishSwiper dishes={dishes} />} 
       text="" 
     />
