@@ -46,7 +46,6 @@ $primary-font : 'Helvetica Neue';
     color: #979797;
 }
 
-// Mobile Mixins
 @mixin mobile-h1 {
     font-family: $primary-font;
     font-weight: 400;
@@ -92,13 +91,4 @@ $primary-font : 'Helvetica Neue';
     font-weight: 200;
     font-size: 14px;
     color: $primary-grey;
-}
-
-@mixin desktop-mobile-links {
-    text-decoration: none;
-    font-family: $primary-font;
-    font-weight: 200;
-    font-size:18px;
-    letter-spacing: 1.92px;
-    color: $primary-black;
 }
