@@ -1,0 +1,64 @@
+@import './../../constants/fonts/fonts.scss';
+
+.sectionChef {
+    padding: 48px 20px 0 20px;       
+
+    @media (min-width: 1440px) {
+        padding: 80px 128px 0px 128px;       
+    }
+
+
+
+    & .title {
+        @include mobile-h2;
+        text-align: left;
+
+        @media (min-width: 1440px) {
+            @include desktop-h2;
+            text-align: center;
+
+        }
+    }
+
+    & .chefDescription {
+        padding: 16px 0 32px 0;
+        display: flex;
+        gap: 24px;
+        flex-direction: column;
+        text-align: justify;
+
+        @media (min-width: 1440px) {
+            padding: 40px 0 45px 0;
+            flex-direction: row;
+            gap: 63px;
+            text-align: left;
+
+
+        }
+
+        & .text {
+            @include mobile-body;
+            line-height: 28px;
+            letter-spacing: 1.25px;
+
+            @media (min-width: 1440px) {
+                @include desktop-body;
+                padding-top: 21px;
+                width: 642px;
+                line-height: 35px;
+
+            }
+        }
+    }
+
+    & .subtitle {
+        @include mobile-h2;
+
+        @media (min-width: 1440px) {
+            @include desktop-h2;
+            text-align: left;
+            text-transform: none;
+
+        }
+    }
+}
