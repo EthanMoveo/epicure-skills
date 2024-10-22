@@ -3,18 +3,20 @@ import React from 'react';
 import './footer.modules.scss';
 
 const Footer: React.FC = () => {
+  const menuItems = [
+    'Contact Us',
+    'Term of Use',
+    'Privacy Policy',
+  ];
+
   return (
     <footer className="footer">
       <ul className="footer__links">
-        <li className="footer__link-item">
-          <a href="/contact" className="footer__link">Contact Us</a>
-        </li>
-        <li className="footer__link-item">
-          <a href="/terms" className="footer__link">Term of Use</a>
-        </li>
-        <li className="footer__link-item">
-          <a href="/privacy" className="footer__link">Privacy Policy</a>
-        </li>
+        {menuItems.map((item, index) => (
+          <li key={index} className="footer__link-item">
+            <span className="footer__link">{item}</span>
+          </li>
+        ))}
       </ul>
     </footer>
   );
