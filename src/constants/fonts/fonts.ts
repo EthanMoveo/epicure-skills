@@ -1,4 +1,4 @@
-import { COLORS } from './colors';
+import { COLORS } from '../colors/colors';
 export const FONT_FAMILY_PRIMARY = 'Helvetica Neue';
 
 export const FONTS = {

@@ -1,4 +1,4 @@
-@import './../../../constants/colors.scss';
+@import './../../../constants/colors/colors.scss';
 
 .cardContainer {
   background-color: $secondary-light-beige;
@@ -10,7 +10,7 @@
     overflow: hidden;
     height: fit-content;
 
-    & img {
+     img {
       width: 245px;
       height: 152px;
 

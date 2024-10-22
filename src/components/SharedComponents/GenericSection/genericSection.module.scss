@@ -1,4 +1,4 @@
-@import './../../../constants/fonts.scss';
+@import './../../../constants/fonts/fonts.scss';
 
 .genericSection { 
     padding: 48px 0px 0px 20px;
@@ -8,7 +8,11 @@
     }
 
     & .title {
-        @include section-title;
+        @include mobile-h2;
+
+        @media (min-width: 1440px) {
+            @include desktop-h2
+        }
     }
 
     & .optionalText {
@@ -36,7 +40,7 @@
     }
 
     & img {
-        width: 24;
-        height: 24;
+        width: 24px;
+        height: 24px;
     }
 }

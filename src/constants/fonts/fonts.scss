@@ -1,23 +1,12 @@
-@import './colors.scss';
+@import '../colors/colors.scss';
 
 $primary-font : 'Helvetica Neue';
 
-@mixin section-title {
-    @include mobile-h2;
-    font-size: 18px;
-    letter-spacing: 1.25px;
-    text-align: center;
-    text-transform: uppercase;
-  
-    @media (min-width: 1440px) {
-      @include desktop-h2
-    }
-}
 
 @mixin desktop-h1 {
     font-family: $primary-font;
-    font-weight: 200;
-    font-size: 32px;
+    font-weight: 204000;
+    font-size: 40px;
     color: $primary-black;
 }
 
@@ -60,16 +49,19 @@ $primary-font : 'Helvetica Neue';
 // Mobile Mixins
 @mixin mobile-h1 {
     font-family: $primary-font;
-    font-weight: 200;
-    font-size: 24px;
+    font-weight: 400;
+    font-size: 18px;
     color: $primary-black;
 }
 
 @mixin mobile-h2 {
     font-family: $primary-font;
     font-weight: 200;
-    font-size: 16px;
+    font-size: 18px;
     color: $primary-black;
+    letter-spacing: 1.25px;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 @mixin mobile-h3 {
@@ -84,6 +76,7 @@ $primary-font : 'Helvetica Neue';
     font-weight: 200;
     font-size: 16px;
     color: $primary-black;
+    letter-spacing: 1.97px;
 }
 
 

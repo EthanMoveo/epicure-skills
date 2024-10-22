@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { FONTS } from './../../constants/fonts';
-import { COLORS } from './../../constants/colors';
+import { FONTS } from '../../constants/fonts/fonts';
+import { COLORS } from '../../constants/colors/colors';
 
 export const HeaderContainer = styled.header`
   display: flex;

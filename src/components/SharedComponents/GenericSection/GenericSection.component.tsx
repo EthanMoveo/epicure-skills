@@ -14,10 +14,10 @@ const GenericSection: React.FC<GenericSectionProps> = ({ title, swiperComponent,
     <section className={styles.genericSection}>
       <h1 className={styles.title}>{title}</h1> 
       {swiperComponent}
-      <div className={styles.optionalText}> 
-       {text && <div className={styles.additionalText}>{text}</div>}
-       {text && <img src={moreIcon} />}
-      </div>
+      { text && <div className={styles.optionalText}> 
+       <div className={styles.additionalText}>{text}</div>
+       <img src={moreIcon} />
+      </div> }
     </section>
   );
 };

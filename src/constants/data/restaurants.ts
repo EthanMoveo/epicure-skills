@@ -1,6 +1,6 @@
-import picClaro from './../assets/pictures/claro.png';
-import picTiger from './../assets/pictures/tiger-lily.png';
-import picLumina from './../assets/pictures/Lumina.png';
+import picClaro from './../../assets/pictures/claro.png';
+import picTiger from './../../assets/pictures/tiger-lily.png';
+import picLumina from './../../assets/pictures/Lumina.png';
 
 
 export const restaurants = [
