@@ -12,16 +12,19 @@ const AboutUs: React.FC = () => {
       <div className={styles.description}>
         <div>
           <div className={styles.title}>About Us</div>
-          <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a lacus vel justo fermentum bibendum non 
-          eu ipsum. Cras porta malesuada eros, eget blandit
-          turpis suscipit at.  Vestibulum sed massa in magna sodales porta.  Vivamus elit urna,
-          <br />
-          dignissim a vestibulum.
-          <br /> <br />
+            <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a lacus vel justo fermentum bibendum non 
+            eu ipsum. Cras porta malesuada eros, eget blandit
+            turpis suscipit at.  Vestibulum sed massa in magna sodales porta.  Vivamus elit urna,
+            <span className={styles.breakline} >
+            dignissim a vestibulum.
+            </span>
+          </p>
+          <p className={styles.secondParagraph}>
+           <span className={styles.breakline}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a lacus vel justo fermentum bibendum no
           eu ipsum. Cras porta malesuada eros.
-          <br /> <br />
+          </span> 
           </p>
         </div>
         <div className={styles.downloadsDesktop}>

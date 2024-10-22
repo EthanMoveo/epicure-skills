@@ -50,15 +50,24 @@
         width: 569px;
         }
     }
+
+    & .secondParagraph {
+        margin-top: 1rem;
+    }
+    
+    & .breakline {
+        display: block;
+    }
 }
 
 .downloadsDesktop {
     margin-bottom: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 
     @media (min-width: 1440px) {
-        display: flex;
         flex-direction: row;
-        gap: 16px;
         margin-top: 16px;
     }
 
