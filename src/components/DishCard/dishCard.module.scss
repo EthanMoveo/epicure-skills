@@ -59,8 +59,8 @@
         @media (min-width: 1440px) {
             padding: 0px 42px;
             margin-bottom: 18px;
-            line-height: 30px;
             @include desktop-body;
+            line-height: 30px;
             min-height: 123px;
         }
     }
