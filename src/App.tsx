@@ -3,12 +3,17 @@ import Hero from "./components/Hero/Hero.component"
 import RestaurantSwiper from "./components/RestaurantSwiper/RestaurantSwiper.component";
 import DishSwiper from "./components/DishSwiper/DishSwiper.component";
 import GenericSection from "./components/SharedComponents/GenericSection/GenericSection.component";
+import SectionIcons from "./components/SectionIcons/SectionIcons.component";
+import AboutUs from "./components/AboutUs/AboutUs.component";
+import Footer from "./components/Footer/Footer.component";
 import { restaurants } from "./constants/data/restaurants";
+import { icons } from "./constants/data/icons";
 import { dishes } from "./constants/data/dishes";
 import './App.css'
 
 
 function App() {
+
 
   return (
     <>
@@ -24,6 +29,10 @@ function App() {
       swiperComponent={<DishSwiper dishes={dishes} />} 
       text="" 
     />
+    <SectionIcons icons={icons} />
+    <AboutUs />
+    <Footer />
+
     
     </>
   )

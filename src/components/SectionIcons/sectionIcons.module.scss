@@ -1,0 +1,36 @@
+@import './../../constants/colors/colors.scss';
+@import './../../constants/fonts/fonts.scss';
+
+.iconSection {
+    margin-top: 46px;
+    padding: 24px 51px;
+    background-color: $secondary-light-gray;
+
+    @media (min-width: 1440px) {
+        margin-top: 80px;
+        padding: 36px 0px;
+    }
+
+    & .title {
+      @include mobile-h2;
+
+      @media (min-width: 1440px) {
+          @include desktop-h2
+      }
+  }
+  }
+  
+  .iconContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    margin-top: 32px;
+    gap: 56px;
+
+    @media (min-width: 1440px) {
+        flex-direction: row;
+        gap: 40px;
+    }
+  }
+  
