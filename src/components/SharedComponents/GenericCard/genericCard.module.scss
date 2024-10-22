@@ -3,7 +3,11 @@
 .cardContainer {
   background-color: $secondary-light-beige;
   overflow: hidden;
-  width: fit-content;
+  width: 245px;
+  @media (min-width: 1440px) {
+    width: fit-content;
+    
+  }
 
   & .imageContainer {
     width: 100%;
@@ -11,7 +15,7 @@
     height: fit-content;
 
      img {
-      width: 245px;
+      width: inherit;
       height: 152px;
 
       @media (min-width: 1440px) {
