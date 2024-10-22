@@ -1,13 +1,9 @@
 import React from 'react';
 
+import { menuItems } from '../../constants/data/menuItems';
 import './footer.modules.scss';
 
 const Footer: React.FC = () => {
-  const menuItems = [
-    'Contact Us',
-    'Term of Use',
-    'Privacy Policy',
-  ];
 
   return (
     <footer className="footer">
