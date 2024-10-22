@@ -1,0 +1,17 @@
+@import './../../../constants/fonts/fonts.scss';
+
+.genericIcon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+}
+
+.text {
+    @include mobile-body;
+
+    @media (min-width: 1440px) {
+    @include desktop-body;
+    }
+}
