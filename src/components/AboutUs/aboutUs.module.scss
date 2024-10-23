@@ -1,0 +1,98 @@
+@import './../../constants/colors/colors.scss';
+@import './../../constants/fonts/fonts.scss';
+
+.aboutUs {
+    background-color: $secondary-light-gray ;
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 24px 27px 48px 20px; 
+    justify-content: flex-start;
+    
+    @media (min-width: 1440px) {
+        flex-direction: row;
+        padding: 40px 129px 40px 132px;
+        align-items:  center;
+    }
+
+}
+
+.description {
+    display: flex;
+    flex-direction: column-reverse;
+
+    @media (min-width: 1440px) {
+        flex-direction: column;
+        width: 918px;
+    }
+
+    & .title {
+            margin: 0 0 16px 0;
+            @include mobile-h2;
+            letter-spacing: 1.25px;
+            text-align: left;
+            text-transform: uppercase;
+          
+            @media (min-width: 1440px) {
+              margin: 0 0 8px 0;
+              @include desktop-h2;
+            }
+        }
+    
+    p {
+        @include mobile-body;
+        font-size: 18px;
+        letter-spacing: 2.14px;
+        line-height: 30px;
+
+        @media (min-width: 1440px) {
+        @include desktop-body;
+        font-size: 20px;
+        width: 569px;
+        }
+    }
+
+    & .secondParagraph {
+        margin-top: 1rem;
+    }
+    
+    & .breakline {
+        display: block;
+    }
+}
+
+.downloadsDesktop {
+    margin-bottom: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @media (min-width: 1440px) {
+        flex-direction: row;
+        margin-top: 16px;
+    }
+
+    & img {
+        width: 180px;
+        height: 52px;
+    }
+}
+
+.logoDesktop {
+    margin-bottom: 32px;
+    
+    @media (min-width: 1440px) {
+        display: flex;
+    
+    }
+    & img {
+        width: 102px;
+        height: 95px;
+        
+        @media (min-width: 1440px) {
+            width: 178px;
+            height: 166px;
+            padding-left: 83px;
+        }
+    }
+
+}

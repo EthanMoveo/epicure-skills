@@ -1,0 +1,16 @@
+@import './../../../constants/fonts/fonts.scss';
+@import './../../../mixin.scss';
+
+
+.genericIcon {
+    @include flexbox-column-center;
+    gap: 32px;
+}
+
+.text {
+    @include mobile-body;
+
+    @media (min-width: 1440px) {
+    @include desktop-body;
+    }
+}

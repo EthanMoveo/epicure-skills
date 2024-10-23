@@ -1,0 +1,14 @@
+@import './constants/fonts/fonts.scss';
+
+@mixin desktop-mobile-links {
+    @include mobile-h2;
+    letter-spacing: 1.92px;
+    text-transform: none;
+}
+
+@mixin flexbox-column-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
