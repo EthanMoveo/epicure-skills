@@ -3,8 +3,9 @@ import GenericCard from '../SharedComponents/GenericCard/GenericCard.component';
 import fullStar from './../../assets/icons/star-full.svg';
 import emptyStar from './../../assets/icons/star-empty.svg';
 import styles from './restaurantCard.module.scss';
+import { Restaurant } from '../../constants/interfaces/Restaurant';
 
-const RestaurantCard: React.FC<{ picture: string; restaurantName: string; chefName: string; rating: number }> = ({
+const RestaurantCard: React.FC<Restaurant> = ({
   picture,
   restaurantName,
   chefName,

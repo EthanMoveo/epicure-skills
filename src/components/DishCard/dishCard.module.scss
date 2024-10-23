@@ -1,0 +1,86 @@
+@import './../../constants/fonts/fonts.scss';
+@import './../../mixin.scss';
+
+.dishCardContent {
+    padding: 16px 20px 16px 16px;
+    width: 245px;
+
+    @media (min-width: 1440px) {
+        width: 379px;
+        padding: 18px 0 12px 0;
+        text-align: center;
+        @include flexbox-column-center;
+    }
+
+    & .cardTitle {
+        @include mobile-h1;
+        letter-spacing: 2.67px;
+        text-align: left;
+    
+        @media (min-width: 1440px) {
+            padding: 0px 120px;
+            margin-bottom: 8px;
+            text-align: center;
+          @include desktop-h1;
+        }
+      }
+
+    & .iconText {
+        display: flex;
+        flex-direction: column-reverse;
+    
+
+        @media (min-width: 1440px) {
+            @include flexbox-column-center;
+            gap: 0px;
+        }
+    }
+
+    & .icon {
+        margin-bottom: 16px;
+        width: 30px;
+        height: 24px;
+        @media (min-width: 1440px) {
+        width: 40px;
+        height: 30px;
+        margin-bottom: 8px;
+        }
+    }
+
+    & .description {
+        @include mobile-body;
+        line-height: 20px;
+        min-height: 100px;
+        @media (min-width: 1440px) {
+            padding: 0px 42px;
+            margin-bottom: 18px;
+            @include desktop-body;
+            line-height: 30px;
+            min-height: 123px;
+        }
+    }
+
+    & .priceContainer {
+        display: flex;
+        gap: 8px;
+
+        
+        .lines {
+            display: none;
+            @media (min-width: 1440px) {
+                display: flex;
+                width: 112px;
+            }
+        }
+        & .price {
+            @include mobile-body;
+            font-weight: 400;
+
+            @media (min-width: 1440px) {
+                @include desktop-body;
+            }
+        }
+    }
+
+
+}

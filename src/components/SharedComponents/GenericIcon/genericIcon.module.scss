@@ -1,10 +1,9 @@
 @import './../../../constants/fonts/fonts.scss';
+@import './../../../mixin.scss';
+
 
 .genericIcon {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include flexbox-column-center;
     gap: 32px;
 }
 

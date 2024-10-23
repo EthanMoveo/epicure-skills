@@ -1,5 +1,6 @@
 @import './../../constants/colors/colors.scss';
 @import './../../constants/fonts/fonts.scss';
+@import './../../mixin.scss';
 
 .iconSection {
     margin-top: 46px;
@@ -21,10 +22,7 @@
   }
   
   .iconContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    align-items: center; 
+    @include flexbox-column-center;
     margin-top: 32px;
     gap: 56px;
 
