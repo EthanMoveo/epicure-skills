@@ -17,6 +17,8 @@ const GenericSwiper = <T extends { id: number }>({ items, CardComponent }: Gener
         breakpoints={{
           1440: {
             slidesPerView: 3,
+            spaceBetween: 24,
+
           },
         }}
         className={styles.swiperContainer}

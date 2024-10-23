@@ -1,3 +1,6 @@
+import { Fade, Slide, JackInTheBox} from 'react-awesome-reveal';
+
+
 import Header from "./components/Header/Header.component"
 import Hero from "./components/Hero/Hero.component"
 import GenericSection from "./components/SharedComponents/GenericSection/GenericSection.component";
@@ -27,12 +30,17 @@ function App() {
       CardComponent={RestaurantCard}
       text="All Restaurants" 
     />
-    <GenericSection
-      title="Signature dish of:" 
-      items={dishes}
-      CardComponent={DishCard}
-    />
-    <SectionIcons icons={icons} />
+    <Slide triggerOnce duration={2000}>
+      <GenericSection
+        title="Signature dish of:" 
+        items={dishes}
+        CardComponent={DishCard}
+      />
+    </Slide>
+    <Slide triggerOnce direction='right'>
+      <SectionIcons icons={icons} />
+    </Slide>
+    <Fade triggerOnce duration={1000} delay={500}>
     <ChefSection title="Chef of the week"
       image={chefPic} 
       text="Chef Yossi Shitrit has been living and breathing his culinary dreams for more than two decades, 
@@ -40,6 +48,7 @@ function App() {
       Shitrit's creativity and culinary  acumen born of long experience  are expressed in the every detail of each and every dish." 
       subtitle="Yossi's Restaurants" 
       restaurants={chefRestaurants}/>
+      </Fade>
     <AboutUs />
     <Footer />    
     </>
