@@ -21,12 +21,14 @@ function App() {
     <Hero />
     <GenericSection
       title="Popular restaurant in epicure:" 
-      swiperComponent={<GenericSwiper items={restaurants} CardComponent={RestaurantCard} />} 
+      items={restaurants}
+      CardComponent={RestaurantCard}
       text="All Restaurants" 
     />
     <GenericSection
       title="Signature dish of:" 
-      swiperComponent={<GenericSwiper items={dishes} CardComponent={DishCard} />} 
+      items={dishes}
+      CardComponent={DishCard}
     />
     <SectionIcons icons={icons} />
     <AboutUs />
