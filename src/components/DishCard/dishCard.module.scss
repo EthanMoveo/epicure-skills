@@ -9,7 +9,7 @@
         width: 379px;
         padding: 18px 0 12px 0;
         text-align: center;
-        @include direction-column-center;
+        @include flexbox-column-center;
     }
 
     & .cardTitle {
@@ -31,7 +31,7 @@
     
 
         @media (min-width: 1440px) {
-            @include direction-column-center;
+            @include flexbox-column-center;
             gap: 0px;
         }
     }

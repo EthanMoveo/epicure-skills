@@ -6,7 +6,7 @@
     text-transform: none;
 }
 
-@mixin direction-column-center {
+@mixin flexbox-column-center {
     display: flex;
     flex-direction: column;
     justify-content: center;

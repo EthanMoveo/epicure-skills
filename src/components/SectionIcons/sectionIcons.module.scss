@@ -22,7 +22,7 @@
   }
   
   .iconContainer {
-    @include direction-column-center;
+    @include flexbox-column-center;
     margin-top: 32px;
     gap: 56px;
 

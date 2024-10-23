@@ -3,7 +3,7 @@
 
 
 .genericIcon {
-    @include direction-column-center;
+    @include flexbox-column-center;
     gap: 32px;
 }
 
