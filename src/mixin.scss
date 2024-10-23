@@ -5,3 +5,10 @@
     letter-spacing: 1.92px;
     text-transform: none;
 }
+
+@mixin direction-column-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

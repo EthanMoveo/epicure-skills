@@ -27,7 +27,6 @@ function App() {
     <GenericSection
       title="Signature dish of:" 
       swiperComponent={<DishSwiper dishes={dishes} />} 
-      text="" 
     />
     <SectionIcons icons={icons} />
     <AboutUs />

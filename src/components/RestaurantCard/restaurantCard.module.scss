@@ -1,4 +1,6 @@
 @import './../../constants/fonts/fonts.scss';
+@import './../../mixin.scss';
+
 
 .cardContentRestaurant {
   padding: 16px 0 16px 16px;
@@ -6,10 +8,7 @@
   @media (min-width: 1440px) {
     padding: 18px 0 0 0;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include direction-column-center
   }
 
   & .cardTitle {
