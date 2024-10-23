@@ -4,15 +4,15 @@ import styles from './chefRestaurantCard.module.scss';
 
 interface ChefRestaurantCardProps {
   id: number;
-  title?: string;
+  restaurantName: string;
   picture: string;
 }
 
-const ChefRestaurantCard: React.FC<ChefRestaurantCardProps> = ({ id, title, picture }) => {
+const ChefRestaurantCard: React.FC<ChefRestaurantCardProps> = ({restaurantName, picture }) => {
   return (
     <GenericCard picture={picture}>
       <div className={styles.cardContent}>
-        <div className={styles.cardTitle}>{title}</div>
+        <div className={styles.cardTitle}>{restaurantName}</div>
       </div>
     </GenericCard>
   );

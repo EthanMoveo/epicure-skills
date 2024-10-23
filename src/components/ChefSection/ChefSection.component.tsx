@@ -3,16 +3,15 @@ import React from 'react';
 import styles from './chefSection.module.scss';
 import useIsDesktop from '../../hooks/useIsDesktop.hook';
 import ChefRestaurantCard from '../ChefRestaurantCard/ChefRestaurantCard.component';
-import { Restaurant } from '../../constants/interfaces/Restaurant';
 import GenericSwiper from '../SharedComponents/GenericSwiper/GenericSwiper.component';
-
+import { ChefRestaurants } from '../../constants/interfaces/chefRestaurants';
 
 interface ChefSectionProps {
   title: string;
   image: string;
   text: string;
   subtitle: string;
-  restaurants: Restaurant[];
+  restaurants: ChefRestaurants[];
 
 }
 
@@ -35,7 +34,7 @@ const ChefSection: React.FC<ChefSectionProps> = ({ title, image, text, subtitle,
             <ChefRestaurantCard
               key={index}
               id={restaurant.id}
-              title={restaurant.restaurantName}
+              restaurantName={restaurant.restaurantName}
               picture={restaurant.picture}
             />
           ))}
