@@ -4,7 +4,8 @@ import styles from './chefSection.module.scss';
 import useIsDesktop from '../../hooks/useIsDesktop.hook';
 import ChefRestaurantCard from '../ChefRestaurantCard/ChefRestaurantCard.component';
 import GenericSwiper from '../SharedComponents/GenericSwiper/GenericSwiper.component';
-import { ChefRestaurants } from '../../constants/interfaces/chefRestaurants';
+import { ChefRestaurants } from '../../constants/interfaces/ChefRestaurants';
+import { DeviceType } from '../../constants/types/DeviceType';
 
 interface ChefSectionProps {
   title: string;
@@ -16,7 +17,7 @@ interface ChefSectionProps {
 }
 
 const ChefSection: React.FC<ChefSectionProps> = ({ title, image, text, subtitle, restaurants }) => {
-  const isDesktop = useIsDesktop(1440); 
+  const isDesktop = useIsDesktop(DeviceType.DESKTOP); 
   
   return (
     <section className={styles.sectionChef}>

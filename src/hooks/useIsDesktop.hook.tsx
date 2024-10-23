@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 
-const useIsDesktop = (breakpoint: number = 1440) => {
-  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= breakpoint);
+import { DeviceType } from '../constants/types/DeviceType';
+const useIsDesktop = (breakpoint: number) => {
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= DeviceType.DESKTOP);
 
   useEffect(() => {
     const handleResize = () => {
