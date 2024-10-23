@@ -1,7 +1,6 @@
 import Header from "./components/Header/Header.component"
 import Hero from "./components/Hero/Hero.component"
 import GenericSection from "./components/SharedComponents/GenericSection/GenericSection.component";
-import GenericSwiper from "./components/SharedComponents/GenericSwiper/GenericSwiper.component";
 import RestaurantCard from "./components/RestaurantCard/RestaurantCard.component";
 import DishCard from "./components/DishCard/DishCard.component";
 import SectionIcons from "./components/SectionIcons/SectionIcons.component";
