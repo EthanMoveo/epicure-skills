@@ -3,8 +3,8 @@ import React from 'react';
 import styles from './chefSection.module.scss';
 import useIsDesktop from '../../hooks/useIsDesktop.hook';
 import ChefRestaurantCard from '../ChefRestaurantCard/ChefRestaurantCard.component';
-import ChefRestaurantSwiper from '../ChefRestaurantSwiper/ChefRestaurantSwiper.component';
 import { Restaurant } from '../../constants/interfaces/Restaurant';
+import GenericSwiper from '../SharedComponents/GenericSwiper/GenericSwiper.component';
 
 
 interface ChefSectionProps {
@@ -18,6 +18,7 @@ interface ChefSectionProps {
 
 const ChefSection: React.FC<ChefSectionProps> = ({ title, image, text, subtitle, restaurants }) => {
   const isDesktop = useIsDesktop(1440); 
+  
   return (
     <section className={styles.sectionChef}>
       <div className={styles.title}>{title}</div>
@@ -33,13 +34,14 @@ const ChefSection: React.FC<ChefSectionProps> = ({ title, image, text, subtitle,
           {restaurants.map((restaurant, index) => (
             <ChefRestaurantCard
               key={index}
+              id={restaurant.id}
               title={restaurant.restaurantName}
               picture={restaurant.picture}
             />
           ))}
         </div>) 
         :
-         (<ChefRestaurantSwiper restaurants={restaurants} />)
+         (<GenericSwiper CardComponent={ChefRestaurantCard} items={restaurants} />)
         }
         </div>
       </div>

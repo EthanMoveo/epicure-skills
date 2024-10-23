@@ -4,6 +4,7 @@ import chefRestaurantPic2 from './../../assets/pictures/chefRestaurant3.png';
 
 export const chefRestaurants = [
     {
+      id: 1,
       picture: chefRestaurantPic,
       restaurantName: 'Onza',
       chefName: '',
@@ -11,12 +12,14 @@ export const chefRestaurants = [
 
     },
     {
+      id: 2,
       picture: chefRestaurantPic1,
       restaurantName: 'Kitchen Market',
       chefName: '',
       rating: 0,
     },
     {
+      id: 3,
       picture: chefRestaurantPic2,
       restaurantName: 'Mashya',
       chefName: '',

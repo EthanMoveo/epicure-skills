@@ -3,11 +3,12 @@ import GenericCard from '../SharedComponents/GenericCard/GenericCard.component';
 import styles from './chefRestaurantCard.module.scss';
 
 interface ChefRestaurantCardProps {
-  title: string;
+  id: number;
+  title?: string;
   picture: string;
 }
 
-const ChefRestaurantCard: React.FC<ChefRestaurantCardProps> = ({ title, picture }) => {
+const ChefRestaurantCard: React.FC<ChefRestaurantCardProps> = ({ id, title, picture }) => {
   return (
     <GenericCard picture={picture}>
       <div className={styles.cardContent}>
