@@ -7,23 +7,16 @@ export const chefRestaurants = [
       id: 1,
       picture: chefRestaurantPic,
       restaurantName: 'Onza',
-      chefName: '',
-      rating: 0,
-
     },
     {
       id: 2,
       picture: chefRestaurantPic1,
       restaurantName: 'Kitchen Market',
-      chefName: '',
-      rating: 0,
     },
     {
       id: 3,
       picture: chefRestaurantPic2,
       restaurantName: 'Mashya',
-      chefName: '',
-      rating: 0,
     },
   ];
   
