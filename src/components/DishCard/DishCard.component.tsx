@@ -2,17 +2,11 @@ import React from 'react';
 import GenericCard from './../SharedComponents/GenericCard/GenericCard.component';
 import styles from './dishCard.module.scss';
 import line from './../../assets/icons/line.svg';
+import { Dish } from '../../constants/interfaces/Dish';
 
-interface DishCardProps {
-  id: number,
-  picture: string;
-  title: string;
-  icon: string;
-  description: string;
-  price: number;
-}
 
-const DishCard: React.FC<DishCardProps> = ({
+
+const DishCard: React.FC<Dish> = ({
   picture,
   title,
   icon,
