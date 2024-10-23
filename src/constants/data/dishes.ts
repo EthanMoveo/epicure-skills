@@ -5,6 +5,7 @@ import iconSpicy from './../../assets/icons/spicy-icon.svg';
 
 export const dishes = [
     {
+        id: 1,
         picture: picNoodles,
         title: "Pad Ki Mao",
         icon: iconSpicy,
@@ -12,6 +13,7 @@ export const dishes = [
         price: 88
     },
     {
+        id: 2,
         picture: picGyioza,
         title: "Garbanzo Frito",
         icon: iconSpicy,
@@ -19,6 +21,7 @@ export const dishes = [
         price: 98
     },
     {
+        id: 3,
         picture: picPizza,
         title: "Smoked Pizza",
         icon: iconSpicy,
@@ -26,6 +29,7 @@ export const dishes = [
         price: 65
     },
     {
+        id: 4,
         picture: picNoodles,
         title: "Pad Ki Mao",
         icon: iconSpicy,
@@ -33,6 +37,7 @@ export const dishes = [
         price: 88
     },
     {
+        id: 5,
         picture: picGyioza,
         title: "Garbanzo Frito",
         icon: iconSpicy,
@@ -40,6 +45,7 @@ export const dishes = [
         price: 98
     },
     {
+        id: 6,
         picture: picPizza,
         title: "Smoked Pizza",
         icon: iconSpicy,

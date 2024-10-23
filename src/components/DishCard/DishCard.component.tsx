@@ -4,6 +4,7 @@ import styles from './dishCard.module.scss';
 import line from './../../assets/icons/line.svg';
 
 interface DishCardProps {
+  id: number,
   picture: string;
   title: string;
   icon: string;

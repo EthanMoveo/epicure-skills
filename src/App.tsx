@@ -1,7 +1,5 @@
 import Header from "./components/Header/Header.component"
 import Hero from "./components/Hero/Hero.component"
-import RestaurantSwiper from "./components/RestaurantSwiper/RestaurantSwiper.component";
-import DishSwiper from "./components/DishSwiper/DishSwiper.component";
 import GenericSection from "./components/SharedComponents/GenericSection/GenericSection.component";
 import SectionIcons from "./components/SectionIcons/SectionIcons.component";
 import AboutUs from "./components/AboutUs/AboutUs.component";
@@ -11,6 +9,9 @@ import { icons } from "./constants/data/icons";
 import { dishes } from "./constants/data/dishes";
 import './App.css'
 
+import GenericSwiper2 from "./components/SharedComponents/GenericSwiper/GenericSwiper2.component";
+import RestaurantCard from "./components/RestaurantCard/RestaurantCard.component";
+import DishCard from "./components/DishCard/DishCard.component";
 
 function App() {
 
@@ -21,12 +22,12 @@ function App() {
     <Hero />
     <GenericSection
       title="Popular restaurant in epicure:" 
-      swiperComponent={<RestaurantSwiper restaurants={restaurants} />} 
+      swiperComponent={<GenericSwiper2 items={restaurants} CardComponent={RestaurantCard} />} 
       text="All Restaurants" 
     />
     <GenericSection
       title="Signature dish of:" 
-      swiperComponent={<DishSwiper dishes={dishes} />} 
+      swiperComponent={<GenericSwiper2 items={dishes} CardComponent={DishCard} />} 
     />
     <SectionIcons icons={icons} />
     <AboutUs />

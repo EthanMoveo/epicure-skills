@@ -4,7 +4,7 @@ import fullStar from './../../assets/icons/star-full.svg';
 import emptyStar from './../../assets/icons/star-empty.svg';
 import styles from './restaurantCard.module.scss';
 
-const RestaurantCard: React.FC<{ picture: string; restaurantName: string; chefName: string; rating: number }> = ({
+const RestaurantCard: React.FC<{ id: number, picture: string; restaurantName: string; chefName: string; rating: number }> = ({
   picture,
   restaurantName,
   chefName,
