@@ -8,14 +8,13 @@ export const HeaderContainer = styled.header`
   align-items: center;
   position: sticky;
   top: 0;
-  height: 46px;
   padding: 11px 20px;
   background-color: ${COLORS.PRIMARY.WHITE};
   z-index: 2;
 
   @media (min-width: 1440px) {
     padding: 14px 127px;
-    height: 64px;
+    height: 36px;
   }
 `;
 
