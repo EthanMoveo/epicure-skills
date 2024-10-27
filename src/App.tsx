@@ -1,5 +1,4 @@
-import { Fade, Slide, JackInTheBox} from 'react-awesome-reveal';
-
+import { Fade, Slide} from 'react-awesome-reveal';
 
 import Header from "./components/Header/Header.component"
 import Hero from "./components/Hero/Hero.component"
