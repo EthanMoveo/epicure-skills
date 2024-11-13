@@ -34,9 +34,9 @@ const ChefSection: React.FC<ChefSectionProps> = ({ title, image, text, subtitle,
           {restaurants.map((restaurant, index) => (
             <ChefRestaurantCard
               key={index}
-              id={restaurant.id}
-              restaurantName={restaurant.restaurantName}
-              picture={restaurant.picture}
+              _id={restaurant._id}
+              name={restaurant.name}
+              image={restaurant.image}
             />
           ))}
         </div>) 

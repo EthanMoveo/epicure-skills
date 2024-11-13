@@ -3,6 +3,7 @@ import {useDispatch, useSelector } from 'react-redux';
 import { store, RootState, AppDispatch } from './store/store';
 import { fetchRestaurants } from './store/thunks/restaurant.thunk';
 import { fetchDishes } from './store/thunks/dish.thunk';
+import { fetchChefOfTheWeek } from './store/thunks/chefOfTheWeek.thunk';
 import { Fade, Slide } from 'react-awesome-reveal';
 import { Restaurant } from './constants/interfaces/Restaurant';
 
@@ -24,12 +25,13 @@ function App() {
   const dispatch = useDispatch<AppDispatch>();
   const { restaurants } = useSelector((state: RootState) => state.restaurants);
   const { dishes } = useSelector((state: RootState) => state.dishes);
+  const { chefOfTheWeek } = useSelector((state: RootState) => state.chefOfTheWeek);
 
 
   useEffect(() => {
     dispatch(fetchRestaurants());
     dispatch(fetchDishes());
-
+    dispatch(fetchChefOfTheWeek());
   }, [dispatch]);
 
   return (
@@ -53,15 +55,15 @@ function App() {
         <SectionIcons icons={icons} />
       </Slide>
       <Fade triggerOnce duration={1000} delay={500}>
-        <ChefSection 
+        {chefOfTheWeek ?      
+           <ChefSection 
           title="Chef of the week"
-          image={chefPic} 
-          text="Chef Yossi Shitrit has been living and breathing his culinary dreams for more than two decades, 
-          including running the kitchen in his first restaurant, the fondly-remembered Violet, located in Moshav Udim. 
-          Shitrit's creativity and culinary acumen born of long experience are expressed in the every detail of each and every dish."
-          subtitle="Yossi's Restaurants"
-          restaurants={chefRestaurants}
-        />
+          image={chefOfTheWeek.image} 
+          text={chefOfTheWeek.description}
+          subtitle={`${chefOfTheWeek.name}'s Restaurants`}
+          restaurants={chefOfTheWeek.restaurants}
+        /> : 
+        <div>Error</div>}
       </Fade>
 
       <AboutUs />
