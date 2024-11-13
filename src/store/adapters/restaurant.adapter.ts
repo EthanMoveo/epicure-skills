@@ -1,7 +1,9 @@
+import { API_ROUTES } from '../../constants/api/apiRoutes';
 import { Restaurant } from '../../constants/interfaces/Restaurant';
 
 export const fetchRestaurantsFromApi = async (): Promise<Restaurant[]> => {
-  const response = await fetch('http://localhost:3000/api/restaurants');
+  console.log("Fetching from URL:", API_ROUTES.RESTAURANTS);
+  const response = await fetch(API_ROUTES.RESTAURANTS);
   if (!response.ok) {
     throw new Error('Failed to fetch restaurants');
   }
