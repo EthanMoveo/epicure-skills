@@ -1,3 +1,6 @@
+@import './../../../constants/fonts/fonts.scss';
+
+
 .swiperContainer {
     margin-top: 17px;
     @media (min-width: 1440px) {
@@ -13,6 +16,12 @@
             height: 404px;
     }
     }
+
+    & .error {
+        @include desktop-body;
+        text-align: center;
+    }
+        
 
     & .swiperSlide {
         display: flex;

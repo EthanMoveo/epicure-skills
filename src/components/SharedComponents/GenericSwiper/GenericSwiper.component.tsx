@@ -17,6 +17,7 @@ const GenericSwiper = <T extends { _id: string }>({
   CardComponent,
 }: GenericSwiperProps<T>) => {
   const isLoading = useSelector((state: RootState) => state.restaurants.isLoading);
+  const error = useSelector((state: RootState) => state.restaurants.error);
 
   return (
     <section className={styles.swiperSection}>
@@ -37,7 +38,10 @@ const GenericSwiper = <T extends { _id: string }>({
                 <Skeleton variant="rectangular" className={styles.skeletonCards} style={{ margin: '10px' }} />
               </SwiperSlide>
             ))
-          : items.map((item) => (
+          : error ? <div className={styles.error}>
+            {error}
+          </div> :
+          items.map((item) => (
               <SwiperSlide key={item._id} className={styles.swiperSlide}>
                 <CardComponent {...item} />
               </SwiperSlide>
