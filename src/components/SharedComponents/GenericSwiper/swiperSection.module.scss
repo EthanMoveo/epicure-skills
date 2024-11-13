@@ -4,14 +4,22 @@
         margin-top: 40px;
     }
 
+    & .skeletonCards {
+
+        width: 245px;
+        height: 237px;
+        @media (min-width: 1440px) {
+            width: 379px;
+            height: 404px;
+    }
+    }
+
     & .swiperSlide {
         display: flex;
         align-items: center;
 
         @media (min-width: 1440px) {
             justify-content: center;
-
-            
 
         }
     }

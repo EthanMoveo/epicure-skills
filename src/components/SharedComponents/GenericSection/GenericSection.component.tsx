@@ -3,14 +3,14 @@ import styles from './genericSection.module.scss';
 import GenericSwiper from '../GenericSwiper/GenericSwiper.component';
 import moreIcon from './../../../assets/icons/more.svg';
 
-interface GenericSectionProps<T extends { id: number }> { // Ensure T includes id: number
+interface GenericSectionProps<T extends { _id: string }> { 
   title: string;
   items: T[];
   CardComponent: React.FC<T>;
   text?: string;
 }
 
-const GenericSection = <T extends { id: number }>({ title, items, CardComponent, text }: GenericSectionProps<T>) => {
+const GenericSection = <T extends { _id: string }>({ title, items, CardComponent, text }: GenericSectionProps<T>) => {
   return (
     <section className={styles.genericSection}>
       <h1 className={styles.title}>{title}</h1>

@@ -2,21 +2,36 @@ import React from 'react';
 import GenericCard from './../SharedComponents/GenericCard/GenericCard.component';
 import styles from './dishCard.module.scss';
 import line from './../../assets/icons/line.svg';
+import spicyIcon from './../../assets/icons/spicy-icon.svg';
+import vegetarianIcon from './../../assets/icons/vegetarian-icon.svg';
+import veganIcon from './../../assets/icons/vegan-icon.svg';
 import { Dish } from '../../constants/interfaces/Dish';
 
 
 
 const DishCard: React.FC<Dish> = ({
-  picture,
-  title,
-  icon,
-  description,
+  image,
+  name,
+  tags,
+  ingredients,
   price,
 }) => {
+
+  let icon;
+  if (tags.includes('spicy')) {
+    icon = spicyIcon;
+  } else if (tags.includes('vegetarian')) {
+    icon = vegetarianIcon;
+  } else if (tags.includes('vegan')) {
+    icon = veganIcon;
+  }
+  const description = ingredients.join(', ');
+
+
   return (
-    <GenericCard picture={picture}>
+    <GenericCard picture={image}>
       <div className={styles.dishCardContent}>
-        <div className={styles.cardTitle}>{title}</div>
+        <div className={styles.cardTitle}>{name}</div>
         <div className={styles.iconText}>
             <img src={icon} alt="dish icon" className={styles.icon} />
             <p className={styles.description}>{description}</p>

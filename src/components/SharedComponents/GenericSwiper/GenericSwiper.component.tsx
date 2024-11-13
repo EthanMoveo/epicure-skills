@@ -1,6 +1,10 @@
+// src/components/SharedComponents/GenericSwiper/GenericSwiper.tsx
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { RootState } from './../../../store/store';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+import { Skeleton } from '@mui/material';
 import styles from './swiperSection.module.scss';
 
 interface GenericSwiperProps<T> {
@@ -8,7 +12,12 @@ interface GenericSwiperProps<T> {
   CardComponent: React.FC<T>;
 }
 
-const GenericSwiper = <T extends { id: number }>({ items, CardComponent }: GenericSwiperProps<T>) => {
+const GenericSwiper = <T extends { _id: string }>({
+  items,
+  CardComponent,
+}: GenericSwiperProps<T>) => {
+  const isLoading = useSelector((state: RootState) => state.restaurants.isLoading);
+
   return (
     <section className={styles.swiperSection}>
       <Swiper
@@ -18,16 +27,21 @@ const GenericSwiper = <T extends { id: number }>({ items, CardComponent }: Gener
           1440: {
             slidesPerView: 3,
             spaceBetween: 24,
-
           },
         }}
         className={styles.swiperContainer}
       >
-        {items.map((item) => (
-          <SwiperSlide key={item.id} className={styles.swiperSlide}>
-            <CardComponent {...item} />
-          </SwiperSlide>
-        ))}
+        {isLoading
+          ? Array.from({ length: 4 }).map((_, index) => (
+              <SwiperSlide key={index} className={styles.swiperSlide}>
+                <Skeleton variant="rectangular" className={styles.skeletonCards} style={{ margin: '10px' }} />
+              </SwiperSlide>
+            ))
+          : items.map((item) => (
+              <SwiperSlide key={item._id} className={styles.swiperSlide}>
+                <CardComponent {...item} />
+              </SwiperSlide>
+            ))}
       </Swiper>
     </section>
   );
