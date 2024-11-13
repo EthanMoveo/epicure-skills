@@ -18,7 +18,8 @@ const GenericSwiper = <T extends { _id: string }>({
 }: GenericSwiperProps<T>) => {
   const isLoadingRestaurant = useSelector((state: RootState) => state.restaurants.isLoading);
   const isLoadingDishes = useSelector((state: RootState) => state.dishes.isLoading);
-  const isLoading = isLoadingRestaurant || isLoadingDishes
+  const isLoadingChef = useSelector((state: RootState) => state.chefOfTheWeek.isLoading);
+  const isLoading = isLoadingRestaurant || isLoadingDishes || isLoadingChef;
   const error = useSelector((state: RootState) => state.restaurants.error);
 
   return (

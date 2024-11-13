@@ -16,16 +16,14 @@ import SectionIcons from "./components/SectionIcons/SectionIcons.component";
 import AboutUs from "./components/AboutUs/AboutUs.component";
 import Footer from "./components/Footer/Footer.component";
 import ChefSection from "./components/ChefSection/ChefSection.component";
-import chefPic from "./assets/pictures/Chef.png";
 import { icons } from "./constants/data/icons";
-import { chefRestaurants } from "./constants/data/chefRestaurants";
 import './App.css';
 
 function App() {
   const dispatch = useDispatch<AppDispatch>();
   const { restaurants } = useSelector((state: RootState) => state.restaurants);
   const { dishes } = useSelector((state: RootState) => state.dishes);
-  const { chefOfTheWeek } = useSelector((state: RootState) => state.chefOfTheWeek);
+  const { chefOfTheWeek, error } = useSelector((state: RootState) => state.chefOfTheWeek);
 
 
   useEffect(() => {
@@ -62,8 +60,10 @@ function App() {
           text={chefOfTheWeek.description}
           subtitle={`${chefOfTheWeek.name}'s Restaurants`}
           restaurants={chefOfTheWeek.restaurants}
-        /> : 
-        <div>Error</div>}
+        /> : error ?
+         <div>{error}</div>
+          : "No chef of the week available"
+        }
       </Fade>
 
       <AboutUs />
