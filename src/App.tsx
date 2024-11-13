@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import {useDispatch, useSelector } from 'react-redux';
 import { store, RootState, AppDispatch } from './store/store';
 import { fetchRestaurants } from './store/thunks/restaurant.thunk';
+import { fetchDishes } from './store/thunks/dish.thunk';
 import { Fade, Slide } from 'react-awesome-reveal';
 import { Restaurant } from './constants/interfaces/Restaurant';
 
@@ -16,16 +17,19 @@ import Footer from "./components/Footer/Footer.component";
 import ChefSection from "./components/ChefSection/ChefSection.component";
 import chefPic from "./assets/pictures/Chef.png";
 import { icons } from "./constants/data/icons";
-import { dishes } from "./constants/data/dishes";
 import { chefRestaurants } from "./constants/data/chefRestaurants";
 import './App.css';
 
 function App() {
   const dispatch = useDispatch<AppDispatch>();
   const { restaurants } = useSelector((state: RootState) => state.restaurants);
+  const { dishes } = useSelector((state: RootState) => state.dishes);
+
 
   useEffect(() => {
     dispatch(fetchRestaurants());
+    dispatch(fetchDishes());
+
   }, [dispatch]);
 
   return (

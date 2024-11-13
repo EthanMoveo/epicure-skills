@@ -16,7 +16,9 @@ const GenericSwiper = <T extends { _id: string }>({
   items,
   CardComponent,
 }: GenericSwiperProps<T>) => {
-  const isLoading = useSelector((state: RootState) => state.restaurants.isLoading);
+  const isLoadingRestaurant = useSelector((state: RootState) => state.restaurants.isLoading);
+  const isLoadingDishes = useSelector((state: RootState) => state.dishes.isLoading);
+  const isLoading = isLoadingRestaurant || isLoadingDishes
   const error = useSelector((state: RootState) => state.restaurants.error);
 
   return (
