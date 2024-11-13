@@ -22,7 +22,7 @@ import './App.css';
 
 function App() {
   const dispatch = useDispatch<AppDispatch>();
-  const { restaurants, status: restaurantsStatus, isLoading } = useSelector((state: RootState) => state.restaurants);
+  const { restaurants } = useSelector((state: RootState) => state.restaurants);
 
   useEffect(() => {
     dispatch(fetchRestaurants());
