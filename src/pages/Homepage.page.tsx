@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Skeleton } from '@mui/material';
 import {useDispatch, useSelector } from 'react-redux';
 import { store, RootState, AppDispatch } from '../store/store';
 import { fetchRestaurants } from '../store/thunks/restaurant.thunk';
@@ -22,7 +23,7 @@ function HomePage() {
   const dispatch = useDispatch<AppDispatch>();
   const { restaurants } = useSelector((state: RootState) => state.restaurants);
   const { dishes } = useSelector((state: RootState) => state.dishes);
-  const { chefOfTheWeek, error } = useSelector((state: RootState) => state.chefOfTheWeek);
+  const { chefOfTheWeek } = useSelector((state: RootState) => state.chefOfTheWeek);
 
 
   useEffect(() => {
@@ -59,9 +60,8 @@ function HomePage() {
           text={chefOfTheWeek.description}
           subtitle={`${chefOfTheWeek.name}'s Restaurants`}
           restaurants={chefOfTheWeek.restaurants}
-        /> : error ?
-         <div>{error}</div>
-          : "No chef of the week available"
+        /> : 
+        <Skeleton variant="text" width={300} height={300} style={{ marginLeft: '10px' }} />
         }
       </Fade>
 

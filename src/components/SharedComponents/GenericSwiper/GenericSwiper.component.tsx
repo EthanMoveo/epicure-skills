@@ -19,8 +19,12 @@ const GenericSwiper = <T extends { _id: string }>({
   const isLoadingRestaurant = useSelector((state: RootState) => state.restaurants.isLoading);
   const isLoadingDishes = useSelector((state: RootState) => state.dishes.isLoading);
   const isLoadingChef = useSelector((state: RootState) => state.chefOfTheWeek.isLoading);
+  const errorRestaurant  = useSelector((state: RootState) => state.restaurants.error);
+  const errorDishes  = useSelector((state: RootState) => state.dishes.error);
+  const errorChef  = useSelector((state: RootState) => state.chefOfTheWeek.error);
+  const error  = errorRestaurant || errorDishes || errorChef;
+
   const isLoading = isLoadingRestaurant || isLoadingDishes || isLoadingChef;
-  const error = useSelector((state: RootState) => state.restaurants.error);
 
   return (
     <section className={styles.swiperSection}>
@@ -35,15 +39,13 @@ const GenericSwiper = <T extends { _id: string }>({
         }}
         className={styles.swiperContainer}
       >
-        {isLoading
-          ? Array.from({ length: 4 }).map((_, index) => (
+        {isLoading || error
+          ? Array.from({ length: 3 }).map((_, index) => (
               <SwiperSlide key={index} className={styles.swiperSlide}>
                 <Skeleton variant="rectangular" className={styles.skeletonCards} style={{ margin: '10px' }} />
               </SwiperSlide>
             ))
-          : error ? <div className={styles.error}>
-            {error}
-          </div> :
+          : 
           items.map((item) => (
               <SwiperSlide key={item._id} className={styles.swiperSlide}>
                 <CardComponent {...item} />

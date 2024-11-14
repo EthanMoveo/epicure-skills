@@ -1,13 +1,11 @@
-import HomePage from './pages/Homepage.page';
+import MainRouter from './components/Routes/Router';
 import './App.css';
 
 
 function App() {
 
   return (
-    <>
-      <HomePage />
-    </>
+    <MainRouter />
   );
 }
 
