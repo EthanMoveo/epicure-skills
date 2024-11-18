@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState, AppDispatch } from '../store/store';
 import { loginUser, registerUser } from '../store/thunks/auth.thunk';
+import { useNavigate } from 'react-router-dom';
 import styles from './auth.module.scss';
 
 function AuthPage() {
+  const navigate = useNavigate();
   const dispatch = useDispatch<AppDispatch>();
-  const { error, isLoading, registerMessage } = useSelector((state: RootState) => state.auth);
+  const { token, error, isLoading, registerMessage } = useSelector((state: RootState) => state.auth);
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -20,6 +22,21 @@ function AuthPage() {
       dispatch(loginUser({ username, password }));
     }
   };
+
+  useEffect(() => {
+    if (token) {
+      navigate('/'); 
+    }
+  }, [token, navigate]);
+
+  useEffect(() => {
+    if (registerMessage) {
+      setIsRegistering(false);
+      setUsername('');
+      setPassword('');
+    }
+  }, [registerMessage]);
+
 
   return (
     <div className={styles['auth-container']}>

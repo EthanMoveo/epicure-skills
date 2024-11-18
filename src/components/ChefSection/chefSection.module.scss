@@ -11,8 +11,7 @@
 
     & .title {
         @include mobile-h2;
-        text-align: left;
-
+        text-align: center;
         @media (min-width: 1440px) {
             @include desktop-h2;
             text-align: center;

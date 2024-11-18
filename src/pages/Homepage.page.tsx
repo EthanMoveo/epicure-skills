@@ -37,14 +37,14 @@ function HomePage() {
       <Header />
       <Hero />
       <GenericSection<Restaurant>
-        title="Popular restaurant in epicure:" 
+        title="Popular restaurant in epicure" 
         items={restaurants} 
         CardComponent={RestaurantCard}
         text="All Restaurants" 
       />
       <Slide triggerOnce duration={2000}>
         <GenericSection
-          title="Signature dish of:" 
+          title="Signature dish of" 
           items={dishes} 
           CardComponent={DishCard}
         />

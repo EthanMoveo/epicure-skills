@@ -9,7 +9,7 @@ interface SectionIconsProps {
 const SectionIcons: React.FC<SectionIconsProps> = ({ icons }) => {
   return (
     <section className={styles.iconSection}>
-      <div className={styles.title}>THE MEANING OF OUR ICONS:</div>
+      <div className={styles.title}>THE MEANING OF OUR ICONS</div>
       <div className={styles.iconContainer}>
         {icons.map((item, index) => (
           <GenericIcon key={index} icon={item.icon} text={item.text} />

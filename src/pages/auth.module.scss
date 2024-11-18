@@ -1,4 +1,4 @@
-// src/pages/auth.module.scss
+@import './../constants/fonts//fonts.scss';
 
 $primary-color: #4a90e2;
 $secondary-color: #f5f7fa;
@@ -12,9 +12,11 @@ $success-color: #27ae60;
   justify-content: center;
   min-height: 100vh;
   background-color: $secondary-color;
+  
   padding: 1rem;
 
   h1 {
+    @include desktop-body;
     font-size: 2rem;
     color: $primary-color;
     margin-bottom: 1rem;
@@ -91,7 +93,9 @@ $success-color: #27ae60;
     }
   }
 }
-
+.error {
+  color: $error-color;
+}
 @media (max-width: 600px) {
   .auth-container {
     padding: 2rem;
