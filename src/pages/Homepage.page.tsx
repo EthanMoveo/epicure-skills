@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Skeleton } from '@mui/material';
 import {useDispatch, useSelector } from 'react-redux';
-import { store, RootState, AppDispatch } from '../store/store';
+import {  RootState, AppDispatch } from '../store/store';
 import { fetchRestaurants } from '../store/thunks/restaurant.thunk';
 import { fetchDishes } from '../store/thunks/dish.thunk';
 import { fetchChefOfTheWeek } from '../store/thunks/chefOfTheWeek.thunk';
