@@ -1,8 +1,28 @@
+@import './../../../constants/fonts/fonts.scss';
+
+
 .swiperContainer {
     margin-top: 17px;
+    padding-bottom: 30px;
     @media (min-width: 1440px) {
         margin-top: 40px;
     }
+
+    & .skeletonCards {
+
+        width: 245px;
+        height: 237px;
+        @media (min-width: 1440px) {
+            width: 379px;
+            height: 404px;
+    }
+    }
+
+    & .error {
+        @include desktop-body;
+        text-align: center;
+    }
+        
 
     & .swiperSlide {
         display: flex;
@@ -11,12 +31,17 @@
         @media (min-width: 1440px) {
             justify-content: center;
 
-            
-
         }
     }
     
 
 }
 
-
+  .swiper-pagination {
+    position: absolute;
+    bottom: 5px; 
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+  

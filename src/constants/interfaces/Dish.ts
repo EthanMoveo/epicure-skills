@@ -1,9 +1,11 @@
+import { Restaurant } from "./Restaurant";
+
 export interface Dish {
-    id: number;
-    picture: string;
-    title: string;
-    icon: string;
-    description: string;
-    price: number;
-  }
-  
+  _id: string;
+  image: string;
+  name: string;
+  price: number;
+  ingredients: string[];
+  tags: string[];
+  restaurant: Restaurant;
+}

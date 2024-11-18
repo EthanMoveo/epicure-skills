@@ -6,9 +6,9 @@ import styles from './restaurantCard.module.scss';
 import { Restaurant } from '../../constants/interfaces/Restaurant';
 
 const RestaurantCard: React.FC<Restaurant> = ({
-  picture,
-  restaurantName,
-  chefName,
+  image,
+  name,
+  chef,
   rating,
 }) => {
   const stars = (
@@ -25,11 +25,11 @@ const RestaurantCard: React.FC<Restaurant> = ({
 
   return (
     <GenericCard 
-      picture={picture} 
+      picture={image} 
     >
       <div className={styles.cardContentRestaurant}>
-        <div className={styles.cardTitle}>{restaurantName}</div>
-        <div className={styles.chefName}>{chefName}</div>
+        <div className={styles.cardTitle}>{name}</div>
+        <div className={styles.chefName}>{chef ? chef.name : 'Unknown chef'}</div>
       {stars}
       </div>
     </GenericCard>

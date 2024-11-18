@@ -1,7 +1,13 @@
+import { Chef } from "./Chef";
+import { Dish } from "./Dish";
+
+
 export interface Restaurant {
-    id: number;
-    picture: string;
-    restaurantName: string;
-    chefName: string;
-    rating: number;
-  }
+  _id: string;
+  name: string;
+  image: string;
+  chef: Chef | null; 
+  dishes: Dish[];
+  rating: number;
+}
+
