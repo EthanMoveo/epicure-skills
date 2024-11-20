@@ -5,11 +5,24 @@ import line from './../../assets/icons/line.svg';
 import spicyIcon from './../../assets/icons/spicy-icon.svg';
 import vegetarianIcon from './../../assets/icons/vegetarian-icon.svg';
 import veganIcon from './../../assets/icons/vegan-icon.svg';
+import infoIcon from './../../assets/icons/info.svg';
 import { Dish } from '../../constants/interfaces/Dish';
 import Tooltip from '@mui/material/Tooltip';
 
+// Définir un type pour les tags valides
+type Tag = 'spicy' | 'vegetarian' | 'vegan';
 
+const tagToIcon: Record<Tag, string> = {
+  spicy: spicyIcon,
+  vegetarian: vegetarianIcon,
+  vegan: veganIcon,
+};
 
+const tagToLabel: Record<Tag, string> = {
+  spicy: 'Spicy',
+  vegetarian: 'Vegetarian',
+  vegan: 'Vegan',
+};
 
 const DishCard: React.FC<Dish> = ({
   image,
@@ -18,22 +31,13 @@ const DishCard: React.FC<Dish> = ({
   ingredients,
   price,
 }) => {
-
-  let icon;
-  if (tags.includes('spicy')) {
-    icon = spicyIcon;
-  } else if (tags.includes('vegetarian')) {
-    icon = vegetarianIcon;
-  } else if (tags.includes('vegan')) {
-    icon = veganIcon;
-  }
   const description = ingredients.join(', ');
 
   const getIconTooltip = () => {
-    if (tags.includes('spicy')) return 'Spicy';
-    if (tags.includes('vegetarian')) return 'Vegetarian';
-    if (tags.includes('vegan')) return 'Vegan';
-    return '';
+    return tags
+      .filter((tag): tag is Tag => tag in tagToLabel) // Vérifier si le tag est valide
+      .map((tag) => tagToLabel[tag])
+      .join(' & ');
   };
 
   return (
@@ -41,15 +45,27 @@ const DishCard: React.FC<Dish> = ({
       <div className={styles.dishCardContent}>
         <div className={styles.cardTitle}>{name}</div>
         <div className={styles.iconText}>
-          <Tooltip title={getIconTooltip()}>
-            <img src={icon} alt="dish icon" className={styles.icon} />
+          <div className={styles.iconToolTip}>
+            {tags
+              .filter((tag): tag is Tag => tag in tagToIcon) // Vérifier si le tag est valide
+              .map((tag) => (
+                <img
+                  key={tag}
+                  src={tagToIcon[tag]}
+                  alt={`${tag} icon`}
+                  className={styles.icon}
+                />
+              ))}
+            <Tooltip title={getIconTooltip()}>
+              <img src={infoIcon} alt="info" className={styles.toolTip} />
             </Tooltip>
-            <p className={styles.description}>{description}</p>
+          </div>
+          <p className={styles.description}>{description}</p>
         </div>
         <div className={styles.priceContainer}>
-          <img className={styles.lines} src={line} alt='line' />
+          <img className={styles.lines} src={line} alt="line" />
           <span className={styles.price}>₪{price}</span>
-          <img className={styles.lines} src={line} alt='line' />
+          <img className={styles.lines} src={line} alt="line" />
         </div>
       </div>
     </GenericCard>

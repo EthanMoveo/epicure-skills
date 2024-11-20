@@ -36,6 +36,13 @@
         }
     }
 
+    & .iconToolTip {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px
+    }
+
     & .icon {
         margin-bottom: 16px;
         width: 30px;
@@ -45,6 +52,11 @@
         height: 30px;
         margin-bottom: 8px;
         }
+    }
+
+    & .toolTip {
+        width: 24px;
+        height: 24px
     }
 
     & .description {

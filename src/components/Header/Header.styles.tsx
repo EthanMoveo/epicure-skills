@@ -96,6 +96,7 @@ export const IconGroup = styled.div`
 export const Icon = styled.img`
   width: 20px;
   height: 20px;
+  cursor: pointer;
 
   @media (min-width: 1440px) {
     width: 24px;

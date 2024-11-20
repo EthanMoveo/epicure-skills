@@ -21,6 +21,7 @@ $success-color: #27ae60;
     color: $primary-color;
     margin-bottom: 1rem;
     text-align: center;
+    font-weight: 600;
   }
 
   .auth-form {
@@ -83,7 +84,8 @@ $success-color: #27ae60;
     }
 
     .feedback {
-      font-size: 0.9rem;
+      font-size: 16px;
+      text-align: center;
       &.error {
         color: $error-color;
       }
@@ -104,4 +106,13 @@ $success-color: #27ae60;
       padding: 1.5rem;
     }
   }
+}
+
+
+.switches {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px
 }
