@@ -49,9 +49,6 @@ function HomePage() {
           CardComponent={DishCard}
         />
       </Slide>
-      <Slide triggerOnce direction="right">
-        <SectionIcons icons={icons} />
-      </Slide>
       <Fade triggerOnce duration={1000} delay={500}>
         {chefOfTheWeek ?      
            <ChefSection 

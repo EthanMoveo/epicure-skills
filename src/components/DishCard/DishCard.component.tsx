@@ -34,11 +34,19 @@ const DishCard: React.FC<Dish> = ({
   const description = ingredients.join(', ');
 
   const getIconTooltip = () => {
-    return tags
-      .filter((tag): tag is Tag => tag in tagToLabel) // Vérifier si le tag est valide
+    const content = tags
+      .filter((tag): tag is Tag => tag in tagToLabel)
       .map((tag) => tagToLabel[tag])
       .join(' & ');
+  
+    return (
+      <div>
+        <h1 style={{textAlign: 'center', marginBottom: '5px'}}>Helpful Tip</h1>
+        <p style={{textAlign: 'center', fontSize: '16px'}}>This icon indicates the following:<br />{content}</p>
+      </div>
+    );
   };
+  
 
   return (
     <GenericCard picture={image}>
@@ -47,7 +55,7 @@ const DishCard: React.FC<Dish> = ({
         <div className={styles.iconText}>
           <div className={styles.iconToolTip}>
             {tags
-              .filter((tag): tag is Tag => tag in tagToIcon) // Vérifier si le tag est valide
+              .filter((tag): tag is Tag => tag in tagToIcon)
               .map((tag) => (
                 <img
                   key={tag}
@@ -56,10 +64,10 @@ const DishCard: React.FC<Dish> = ({
                   className={styles.icon}
                 />
               ))}
-            <Tooltip title={getIconTooltip()}>
+          </div>
+            <Tooltip title={getIconTooltip()} >
               <img src={infoIcon} alt="info" className={styles.toolTip} />
             </Tooltip>
-          </div>
           <p className={styles.description}>{description}</p>
         </div>
         <div className={styles.priceContainer}>

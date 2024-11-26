@@ -2,12 +2,11 @@ import styled from 'styled-components';
 
 import { COLORS } from '../../constants/colors/colors'; 
 import { FONTS } from '../../constants/fonts/fonts'; 
-import backgroundImageMobile from './../../assets/pictures/Hero.png'
 import backgroundImageDesktop from './../../assets/pictures/Hero-Desktop.png'
 
 
 export const HeroContainer = styled.section`
-  background-image: url(${backgroundImageMobile});
+  background-image: url(${backgroundImageDesktop});
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
@@ -18,7 +17,6 @@ export const HeroContainer = styled.section`
   padding: 65px 0px;
 
   @media (min-width: 1440px) {
-    background-image: url(${backgroundImageDesktop});
     padding: 236px 332px;
   }
 `;
