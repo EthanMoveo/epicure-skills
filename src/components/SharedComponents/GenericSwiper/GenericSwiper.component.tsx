@@ -13,16 +13,16 @@ interface GenericSwiperProps<T> {
   CardComponent: React.FC<T>;
 }
 
-const GenericSwiper = <T extends { _id: string }>({
+const GenericSwiper = <T extends { id: number }>({
   items,
   CardComponent,
 }: GenericSwiperProps<T>) => {
-  const isLoadingRestaurant = useSelector((state: RootState) => state.restaurants.isLoading);
-  const isLoadingDishes = useSelector((state: RootState) => state.dishes.isLoading);
-  const isLoadingChef = useSelector((state: RootState) => state.chefOfTheWeek.isLoading);
-  const errorRestaurant = useSelector((state: RootState) => state.restaurants.error);
-  const errorDishes = useSelector((state: RootState) => state.dishes.error);
-  const errorChef = useSelector((state: RootState) => state.chefOfTheWeek.error);
+  const isLoadingRestaurant = useSelector((state: RootState) => state.restaurantSwiper.isLoading);
+  const isLoadingDishes = useSelector((state: RootState) => state.dishSwiper.isLoading);
+  const isLoadingChef = useSelector((state: RootState) => state.chefWeek.isLoading);
+  const errorRestaurant = useSelector((state: RootState) => state.restaurantSwiper.error);
+  const errorDishes = useSelector((state: RootState) => state.dishSwiper.error);
+  const errorChef = useSelector((state: RootState) => state.chefWeek.error);
   const error = errorRestaurant || errorDishes || errorChef;
 
   const isLoading = isLoadingRestaurant || isLoadingDishes || isLoadingChef;
@@ -54,7 +54,7 @@ const GenericSwiper = <T extends { _id: string }>({
               </SwiperSlide>
             ))
           : items.map((item) => (
-              <SwiperSlide key={item._id} className={styles.swiperSlide}>
+              <SwiperSlide key={item.id} className={styles.swiperSlide}>
                 <CardComponent {...item} />
               </SwiperSlide>
             ))}

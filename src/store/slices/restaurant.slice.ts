@@ -1,43 +1,39 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { fetchRestaurants } from '../thunks/restaurant.thunk';
+// src/store/slices/restaurantSwiper.slice.ts
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { fetchRestaurantSwiper } from '../thunks/restaurant.thunk';
 import { Restaurant } from '../../constants/interfaces/Restaurant';
 
-interface RestaurantsState {
-  restaurants: Restaurant[];
-  status: 'idle' | 'loading' | 'succeeded' | 'failed';
-  isLoading: boolean
-  error: string | null;
+interface RestaurantSwiperState {
+    restaurantsSwiper: Restaurant[];
+    isLoading: boolean;
+    error: string | null;
 }
 
-const initialState: RestaurantsState = {
-  restaurants: [],
-  status: 'idle',
+const initialState: RestaurantSwiperState = {
+  restaurantsSwiper: [],
   isLoading: false,
   error: null,
 };
 
-const restaurantsSlice = createSlice({
-  name: 'restaurants',
+const restaurantSwiperSlice = createSlice({
+  name: 'restaurantSwiper',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetchRestaurants.pending, (state) => {
-        state.status = 'loading';
+      .addCase(fetchRestaurantSwiper.pending, (state) => {
         state.isLoading = true;
-
+        state.error = null;
       })
-      .addCase(fetchRestaurants.fulfilled, (state, action) => {
+      .addCase(fetchRestaurantSwiper.fulfilled, (state, action: PayloadAction<Restaurant[]>) => {
         state.isLoading = false;
-        state.status = 'succeeded';
-        state.restaurants = action.payload;
+        state.restaurantsSwiper = action.payload;
       })
-      .addCase(fetchRestaurants.rejected, (state, action) => {
+      .addCase(fetchRestaurantSwiper.rejected, (state, action: PayloadAction<any>) => {
         state.isLoading = false;
-        state.status = 'failed';
-        state.error = action.error.message ?? 'Failed to fetch restaurants';
+        state.error = action.payload as string;
       });
   },
 });
 
-export default restaurantsSlice.reducer;
+export default restaurantSwiperSlice.reducer;
