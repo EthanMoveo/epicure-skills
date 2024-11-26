@@ -16,21 +16,22 @@ import DishCard from "../components/DishCard/DishCard.component";
 import AboutUs from "../components/AboutUs/AboutUs.component";
 import Footer from "../components/Footer/Footer.component";
 import ChefSection from "../components/ChefSection/ChefSection.component";
+import { fetchAboutUs } from '../store/thunks/aboutUs.thunk';
 
 function HomePage() {
   const dispatch = useDispatch<AppDispatch>();
   const { restaurantsSwiper } = useSelector((state: RootState) => state.restaurantSwiper);
   const { dishesSwiper } = useSelector((state: RootState) => state.dishSwiper);
-  // const { chefOfTheWeek } = useSelector((state: RootState) => state.chefOfTheWeek);
-  const {chef, chefRestaurants, isLoading: isLoadingChef} = useSelector((state: RootState) => state.chefWeek);
+  const {chef, chefRestaurants } = useSelector((state: RootState) => state.chefWeek);
+
 
   console.log(chef, chefRestaurants)
 
   useEffect(() => {
     dispatch(fetchRestaurantSwiper())
     dispatch(fetchDishSwiper());
-    // dispatch(fetchChefOfTheWeek());
     dispatch(fetchChefOfTheWeek());
+    dispatch(fetchAboutUs());
   }, [dispatch]);
 
   return (
