@@ -17,6 +17,7 @@ import AboutUs from "../components/AboutUs/AboutUs.component";
 import Footer from "../components/Footer/Footer.component";
 import ChefSection from "../components/ChefSection/ChefSection.component";
 import { fetchAboutUs } from '../store/thunks/aboutUs.thunk';
+import { fetchHero } from '../store/thunks/hero.thunk';
 
 function HomePage() {
   const dispatch = useDispatch<AppDispatch>();
@@ -28,7 +29,8 @@ function HomePage() {
   console.log(chef, chefRestaurants)
 
   useEffect(() => {
-    dispatch(fetchRestaurantSwiper())
+    dispatch(fetchHero());
+    dispatch(fetchRestaurantSwiper());
     dispatch(fetchDishSwiper());
     dispatch(fetchChefOfTheWeek());
     dispatch(fetchAboutUs());

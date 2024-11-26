@@ -1,5 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import loginReducer from './slices/login.slice';
+import heroReducer from './slices/hero.slice';
 import registerReducer from './slices/register.slice';
 import dishSwiperReducer from './slices/dish.slice';
 import restaurantSwiperReducer from './slices/restaurant.slice';
@@ -8,6 +9,7 @@ import aboutUsReducer from './slices/aboutUs.slice';
 
 export const store = configureStore({
   reducer: {
+    hero: heroReducer,
     restaurantSwiper: restaurantSwiperReducer,
     dishSwiper: dishSwiperReducer,
     chefWeek: chefOfTheWeekReducer,

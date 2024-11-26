@@ -2,11 +2,10 @@ import styled from 'styled-components';
 
 import { COLORS } from '../../constants/colors/colors'; 
 import { FONTS } from '../../constants/fonts/fonts'; 
-import backgroundImageDesktop from './../../assets/pictures/Hero-Desktop.png'
 
 
-export const HeroContainer = styled.section`
-  background-image: url(${backgroundImageDesktop});
+export const HeroContainer = styled.section<{ background: string }>`
+  background-image: url(${(props) => props.background});
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
