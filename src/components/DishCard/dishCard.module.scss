@@ -36,11 +36,23 @@
         }
     }
 
+    & .toolTipIconDiv {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        @media (min-width: 1440px) {
+            display: block;
+        }
+    }
     & .iconToolTip {
+
+        @media (min-width: 1440px) {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 5px
+        gap: 5px;
+        flex-direction: row;
+        }
     }
 
     & .icon {
@@ -59,6 +71,11 @@
         height: 16px;
         cursor: pointer;
         margin-bottom: 10px;
+        margin-left: 5px;
+
+        @media (min-width: 1440px) {
+            margin-left: 0;
+        }
     }
 
     & .description {

@@ -1,42 +1,39 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { fetchDishes } from '../thunks/dish.thunk';
+// src/store/slices/dishSwiper.slice.ts
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { fetchDishSwiper } from '../thunks/dish.thunk';
 import { Dish } from '../../constants/interfaces/Dish';
 
-interface DishesState {
-  dishes: Dish[];
-  status: 'idle' | 'loading' | 'succeeded' | 'failed';
+interface DishSwiperState {
+  dishesSwiper: Dish[];
   isLoading: boolean;
   error: string | null;
 }
 
-const initialState: DishesState = {
-  dishes: [],
-  status: 'idle',
+const initialState: DishSwiperState = {
+  dishesSwiper: [],
   isLoading: false,
   error: null,
 };
 
-const dishesSlice = createSlice({
-  name: 'dishes',
+const dishSwiperSlice = createSlice({
+  name: 'dishSwiper',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetchDishes.pending, (state) => {
+      .addCase(fetchDishSwiper.pending, (state) => {
         state.isLoading = true;
-        state.status = 'loading';
+        state.error = null;
       })
-      .addCase(fetchDishes.fulfilled, (state, action) => {
+      .addCase(fetchDishSwiper.fulfilled, (state, action: PayloadAction<Dish[]>) => {
         state.isLoading = false;
-        state.status = 'succeeded';
-        state.dishes = action.payload;
+        state.dishesSwiper = action.payload;
       })
-      .addCase(fetchDishes.rejected, (state, action) => {
+      .addCase(fetchDishSwiper.rejected, (state, action: PayloadAction<any>) => {
         state.isLoading = false;
-        state.status = 'failed';
-        state.error = action.error.message ?? 'Failed to fetch dishes';
+        state.error = action.payload as string;
       });
   },
 });
 
-export default dishesSlice.reducer;
+export default dishSwiperSlice.reducer;
