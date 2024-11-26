@@ -1,5 +1,5 @@
 export interface ChefRestaurants {
-    _id: string;
+    id: number;
     image: string;
     name: string;
   }

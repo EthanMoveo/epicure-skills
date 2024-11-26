@@ -1,15 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit';
-import restaurantsReducer from './slices/restaurant.slice';
-import dishesReducer from './slices/dish.slice';
-import chefOfTheWeekReducer from './slices/chefOfTheWeek.slice';
 import loginReducer from './slices/login.slice';
 import registerReducer from './slices/register.slice';
+import dishSwiperReducer from './slices/dish.slice';
+import restaurantSwiperReducer from './slices/restaurant.slice';
+import chefOfTheWeekReducer from './slices/chefOfTheWeek.slice';
 
 export const store = configureStore({
   reducer: {
-    restaurants: restaurantsReducer,
-    dishes: dishesReducer,
-    chefOfTheWeek: chefOfTheWeekReducer,
+    restaurantSwiper: restaurantSwiperReducer,
+    dishSwiper: dishSwiperReducer,
+    chefWeek: chefOfTheWeekReducer,
     login: loginReducer,
     register: registerReducer,
   },

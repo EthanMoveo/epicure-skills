@@ -1,9 +1,7 @@
-import { Restaurant } from "./Restaurant";
 
 export interface Chef {
-    _id: string;
+    id: number;
     name: string;
     image: string;
     description: string;
-    restaurants: Restaurant[];
   }

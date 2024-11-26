@@ -16,6 +16,9 @@ interface ChefSectionProps {
 
 }
 
+const STRAPI_BASE_URL = import.meta.env.VITE_STRAPI_API_BASE_URL;
+
+
 const ChefSection: React.FC<ChefSectionProps> = ({ title, image, text, subtitle, restaurants }) => {
   const isDesktop = useIsDesktop(DeviceBreakPoint.DESKTOP); 
   
@@ -23,7 +26,7 @@ const ChefSection: React.FC<ChefSectionProps> = ({ title, image, text, subtitle,
     <section className={styles.sectionChef}>
       <div className={styles.title}>{title}</div>
       <div className={styles.chefDescription}>
-        <img src={image} alt={title} className={styles.image} />
+        <img src={`${STRAPI_BASE_URL}${image}`} alt={title} className={styles.image} />
         <p className={styles.text}>{text}</p>
       </div>
       <div className={styles.chefRestaurants}>
@@ -34,7 +37,7 @@ const ChefSection: React.FC<ChefSectionProps> = ({ title, image, text, subtitle,
           {restaurants.map((restaurant, index) => (
             <ChefRestaurantCard
               key={index}
-              _id={restaurant._id}
+              id={restaurant.id}
               name={restaurant.name}
               image={restaurant.image}
             />

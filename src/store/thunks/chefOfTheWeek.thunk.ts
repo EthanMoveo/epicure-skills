@@ -1,25 +1,30 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { fetchChefOfTheWeekFromApi } from '../adapters/chefOfTheWeek.adapter';
+import { fetchChefOfTheWeekAdapter } from '../adapters/chefOfTheWeek.adapter';
 import { Chef } from '../../constants/interfaces/Chef';
 import { ChefRestaurants } from '../../constants/interfaces/ChefRestaurants';
-import { Restaurant } from '../../constants/interfaces/Restaurant';
 
-export const fetchChefOfTheWeek = createAsyncThunk<Chef>(
-  'chefOfTheWeek/fetchChefOfTheWeek',
-  async () => {
-    const response = await fetchChefOfTheWeekFromApi();
+export const fetchChefOfTheWeek = createAsyncThunk(
+  'chefOfTheWeek/fetchChefWeek',
+  async (_, { rejectWithValue }) => {
+    try {
+      const { chef: rawChefData, restaurants: rawRestaurantsData } = await fetchChefOfTheWeekAdapter();
 
-    const chefOfTheWeekData = response.chefOfTheWeek;
+      const formattedChef: Chef = {
+        id: rawChefData.data.chef.id,
+        name: rawChefData.data.chef.name,
+        image: rawChefData.data.chef.image?.url || '',
+        description: rawChefData.data.chef.description,
+      };
 
-    const chefOfTheWeek: Chef = {
-      ...chefOfTheWeekData,
-      restaurants: (chefOfTheWeekData.restaurants as Restaurant[]).map((restaurant): ChefRestaurants => ({
-        _id: restaurant._id,
+      const formattedRestaurants: ChefRestaurants[] = rawRestaurantsData.map((restaurant: any) => ({
+        id: restaurant.id,
         name: restaurant.name,
-        image: restaurant.image,
-      })),
-    };
+        image: restaurant.image?.url || '',
+      }));
 
-    return chefOfTheWeek;
+      return { chef: formattedChef, chefRestaurants: formattedRestaurants };
+    } catch (error: any) {
+      return rejectWithValue(error.message || 'Error fetching chef of the week data');
+    }
   }
 );

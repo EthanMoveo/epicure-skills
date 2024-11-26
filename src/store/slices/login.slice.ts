@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { loginUser } from '../thunks/auth.thunk';
-import { resetErrorRegisterMessage } from './register.slice';
 
 interface LoginState {
   token: string | null;
