@@ -1,42 +1,44 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { loginUser } from '../thunks/auth.thunk';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { loginUser } from '../thunks/login.thunk';
 
 interface LoginState {
   token: string | null;
-  error: string | null;
+  user: string | null;
   isLoading: boolean;
+  error: string | null;
 }
 
 const initialState: LoginState = {
-  token: localStorage.getItem('token'),
-  error: null,
+  token: null,
+  user: null,
   isLoading: false,
+  error: null,
 };
 
 const loginSlice = createSlice({
   name: 'login',
   initialState,
   reducers: {
-    resetErrorLoginMessage(state) {
-    state.error = null;
-  }},
+    resetLoginState: () => initialState, 
+  },
   extraReducers: (builder) => {
     builder
       .addCase(loginUser.pending, (state) => {
         state.isLoading = true;
         state.error = null;
       })
-      .addCase(loginUser.fulfilled, (state, action) => {
+      .addCase(loginUser.fulfilled, (state, action: PayloadAction<{ token: string; user: string }>) => {
         state.isLoading = false;
         state.token = action.payload.token;
+        state.user = action.payload.user;
+        state.error = null;
       })
-      .addCase(loginUser.rejected, (state, action) => {
+      .addCase(loginUser.rejected, (state, action: PayloadAction<any>) => {
         state.isLoading = false;
-        state.error = action.error.message ?? 'Failed to log in';
+        state.error = action.payload; 
       });
   },
 });
 
-export const { resetErrorLoginMessage,  } = loginSlice.actions;
-
+export const { resetLoginState } = loginSlice.actions; 
 export default loginSlice.reducer;

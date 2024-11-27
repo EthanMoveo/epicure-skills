@@ -1,22 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState, AppDispatch } from '../store/store';
-import { loginUser } from '../store/thunks/auth.thunk';
-import { useNavigate, Link } from 'react-router-dom';
+import { loginUser } from '../store/thunks/login.thunk';
+import { resetLoginState } from '../store/slices/login.slice';
+import { useNavigate, Link} from 'react-router-dom';
+
 import styles from './auth.module.scss';
-import { resetErrorRegisterMessage } from '../store/slices/register.slice';
 
-
-function Login() {
-  const navigate = useNavigate();
+const Login: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
+  const navigate = useNavigate();
   const { token, error, isLoading } = useSelector((state: RootState) => state.login);
-  dispatch(resetErrorRegisterMessage());
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [isFormValid, setIsFormValid] = useState(false);
 
+  useEffect(() => {
+    dispatch(resetLoginState());
+  }, [dispatch]);
+
+  useEffect(() => {
+    if (token) {
+      navigate('/'); 
+    }
+  }, [token, navigate]);
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
@@ -27,15 +35,13 @@ function Login() {
     setIsFormValid(username.trim() !== '' && password.trim() !== '');
   }, [username, password]);
 
-  useEffect(() => {
-    if (token) {
-      navigate('/');
-    }
-  }, [token, navigate]);
+  const handleResetError = () => {
+    dispatch(resetLoginState()); // Réinitialise uniquement les erreurs si nécessaire
+  };
 
   return (
     <div className={styles['auth-container']}>
-      <h1>Welcome back 👋</h1>
+      <h1>Welcome Back! 👋</h1>
       <form onSubmit={handleSubmit} className={styles['auth-form']}>
         <div>
           <input
@@ -55,19 +61,26 @@ function Login() {
             required
           />
         </div>
-      {error && <div className={`${styles['feedback']} ${styles['error']}`}>{error}</div>}
+        {error && (
+          <p
+            className={`${styles['feedback']} ${styles['error']}`}
+            onClick={handleResetError}
+          >
+            {error}
+          </p>
+        )}
         <button type="submit" disabled={!isFormValid || isLoading}>
-          Login
+          {isLoading ? 'Logging in...' : 'Login'}
         </button>
-        <div className={styles.switches}>
-        <span>Not a member ? </span>
-        <Link to="/register" className={styles['toggle-link']}>
-          Join Now
-        </Link>
-        </div>
+         <div className={styles.switches}>
+          <span>Don't have an account ?</span>
+          <Link to="/register" className={styles['toggle-link']}>
+            Join us
+          </Link>
+          </div>
       </form>
     </div>
   );
-}
+};
 
 export default Login;

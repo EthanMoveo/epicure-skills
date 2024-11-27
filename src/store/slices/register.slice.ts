@@ -1,44 +1,52 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { registerUser } from '../thunks/auth.thunk';
+// src/store/slices/register.slice.ts
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { registerUser } from '../thunks/register.thunk';
 
 interface RegisterState {
-  error: string | null;
+  user: {
+    id: number | null;
+    username: string | null;
+  };
   isLoading: boolean;
-  registerMessage: string | null;
+  error: string | null;
 }
 
 const initialState: RegisterState = {
-  error: null,
+  user: {
+    id: null,
+    username: null,
+  },
   isLoading: false,
-  registerMessage: null,
+  error: null,
 };
 
 const registerSlice = createSlice({
   name: 'register',
   initialState,
-  reducers: {    
-    resetRegisterMessage(state) {
-    state.registerMessage = null;
+  reducers: {
+    resetState: () => initialState, // Réinitialisation complète
+    resetErrorRegisterMessage: (state) => {
+      state.error = null; // Réinitialise uniquement l'erreur
+    },
   },
-    resetErrorRegisterMessage(state) {
-      state.error = null;
-    }},
   extraReducers: (builder) => {
     builder
       .addCase(registerUser.pending, (state) => {
         state.isLoading = true;
         state.error = null;
       })
-      .addCase(registerUser.fulfilled, (state, action) => {
+      .addCase(registerUser.fulfilled, (state, action: PayloadAction<{ id: number; username: string }>) => {
         state.isLoading = false;
-        state.registerMessage = action.payload.message;
+        state.user.id = action.payload.id;
+        state.user.username = action.payload.username;
+        state.error = null;
       })
-      .addCase(registerUser.rejected, (state, action) => {
+      .addCase(registerUser.rejected, (state, action: PayloadAction<any>) => {
         state.isLoading = false;
-        state.error = action.error.message ?? 'Failed to register';
+        state.error = action.payload; // Stocke le message d'erreur
       });
   },
 });
 
-export const { resetRegisterMessage, resetErrorRegisterMessage } = registerSlice.actions;
+export const { resetState, resetErrorRegisterMessage } = registerSlice.actions; // Exportez les actions
 export default registerSlice.reducer;

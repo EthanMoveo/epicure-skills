@@ -9,6 +9,9 @@ export const API_ROUTES = {
 
 
 export const STRAPI_API_ROUTES = {
+  REGISTER: `${STRAPI_API_URL}/api/authentications/`,
+  LOGIN: `${STRAPI_API_URL}/api/authentications/login`,
+  NAVBAR: `${STRAPI_API_URL}/api/navbars/`,
   HERO: `${STRAPI_API_URL}/api/hero?populate=background`,
   DISHES: `${STRAPI_API_URL}/api/dish-swiper?populate%3D=*&populate[dishes][populate][0]=image&populate[dishes][populate][1]=tags.image`,
   RESTAURANTS: `${STRAPI_API_URL}/api/restaurant-swiper?populate[0]=restaurants&populate[restaurants][populate][0]=image&populate[restaurants][populate][1]=chef`,

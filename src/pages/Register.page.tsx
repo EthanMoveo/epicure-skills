@@ -3,38 +3,33 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Dialog, DialogTitle, DialogContent, DialogActions, Button } from '@mui/material';
 
 import { RootState, AppDispatch } from '../store/store';
-import { registerUser } from '../store/thunks/auth.thunk';
+import { registerUser } from '../store/thunks/register.thunk'; // Assurez-vous du bon chemin
 import { useNavigate, Link } from 'react-router-dom';
-import { resetRegisterMessage } from '../store/slices/register.slice';
-import { resetErrorLoginMessage } from '../store/slices/login.slice';
+import { resetState, resetErrorRegisterMessage } from '../store/slices/register.slice'; // Importez les actions nécessaires
 
 import styles from './auth.module.scss';
 
 function Register() {
   const navigate = useNavigate();
   const dispatch = useDispatch<AppDispatch>();
-  const { error, isLoading, registerMessage } = useSelector((state: RootState) => state.register);
+  const { user, error, isLoading } = useSelector((state: RootState) => state.register);
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [isFormValid, setIsFormValid] = useState(false);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
-  dispatch(resetErrorLoginMessage());
-
   useEffect(() => {
-    if (registerMessage) {
-      setIsDialogOpen(true); 
+    if (user.username) {
+      setIsDialogOpen(true); // Ouvre le dialogue en cas de succès
     }
-  }, [registerMessage]);
-
+  }, [user]);
 
   const handleCloseDialog = () => {
     setIsDialogOpen(false); 
-    dispatch(resetRegisterMessage()); 
-    navigate('/login'); 
-  }
-
+    dispatch(resetState()); // Réinitialisation de l'état complet après succès
+    navigate('/login'); // Redirection après succès
+  };
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
@@ -45,14 +40,9 @@ function Register() {
     setIsFormValid(username.trim() !== '' && password.trim() !== '');
   }, [username, password]);
 
-
-
-  useEffect(() => {
-    if (registerMessage) {
-      setUsername('');
-      setPassword('');
-    }
-  }, [registerMessage]);
+  const handleErrorDismiss = () => {
+    dispatch(resetErrorRegisterMessage()); 
+  };
 
   return (
     <div className={styles['auth-container']}>
@@ -76,21 +66,28 @@ function Register() {
             required
           />
         </div>
-      {error && <p className={`${styles['feedback']} ${styles['error']}`}>{error}</p>}
+        {error && (
+          <p
+            className={`${styles['feedback']} ${styles['error']}`}
+            onClick={handleErrorDismiss} // Réinitialise l'erreur lorsqu'on clique dessus
+          >
+            {error}
+          </p>
+        )}
         <button type="submit" disabled={!isFormValid || isLoading}>
-          Register
+          {isLoading ? 'Registering...' : 'Register'}
         </button>
         <div className={styles.switches}>
-        <span>Already have an account ? </span>
-        <Link to="/login" className={styles['toggle-link']}>
-           Switch to Login
-        </Link>
+          <span>Already have an account?</span>
+          <Link to="/login" className={styles['toggle-link']}>
+            Switch to Login
+          </Link>
         </div>
       </form>
       <Dialog open={isDialogOpen} onClose={handleCloseDialog}>
         <DialogTitle>Registration Successful</DialogTitle>
         <DialogContent>
-          <p>You will now be redirect to Login.</p>
+          <p>You will now be redirected to Login.</p>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleCloseDialog} color="primary" variant="contained">
@@ -98,7 +95,6 @@ function Register() {
           </Button>
         </DialogActions>
       </Dialog>
-
     </div>
   );
 }
