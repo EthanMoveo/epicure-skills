@@ -19,19 +19,21 @@
         }
     }
 
+
     & .chefDescription {
         padding: 16px 0 32px 0;
         display: flex;
         gap: 24px;
         flex-direction: column;
         text-align: justify;
+        align-items: center;
 
         @media (min-width: 1440px) {
             padding: 40px 0 45px 0;
             flex-direction: row;
             gap: 63px;
             text-align: left;
-
+            align-items: normal;
 
         }
 
@@ -47,6 +49,12 @@
                 line-height: 35px;
 
             }
+        }
+
+        & .image {
+            width: 479px;
+            height: 372px;
+            display: flex;
         }
     }
 
