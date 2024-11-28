@@ -53,17 +53,10 @@ function HomePage() {
           CardComponent={DishCard}
         />
       </Slide>
-      <Fade triggerOnce duration={1000} delay={500}>
-        {chef ?      
-           <ChefSection 
-          title="Chef of the week"
-          image={chef.image} 
-          text={chef.description}
-          subtitle={`${chef.name}'s Restaurants`}
-          restaurants={chefRestaurants}
-        /> : 
-        <Skeleton variant="text" width={300} height={300} style={{ marginLeft: '10px' }} />
-        }
+      <Fade triggerOnce duration={1000} delay={500}>    
+      <ChefSection 
+        title="Chef of the week"
+        /> 
       </Fade>
 
       <AboutUs />
