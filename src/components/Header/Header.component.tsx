@@ -15,7 +15,7 @@ import UserProfileBubble from '../ProfileBubble/UserProfileBubble.component.tsx'
 const Header: React.FC = () => {
 
   const dispatch = useDispatch<AppDispatch>();
-  const { items: navbarItems, isLoading, error } = useSelector((state: RootState) => state.navbar);
+  const { items: navbarItems, isLoading } = useSelector((state: RootState) => state.navbar);
 
   useEffect(() => {
     dispatch(fetchNavbar());
