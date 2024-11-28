@@ -7,7 +7,6 @@ import styles from './chefSection.module.scss';
 import useIsDesktop from '../../hooks/useIsDesktop.hook';
 import ChefRestaurantCard from '../ChefRestaurantCard/ChefRestaurantCard.component';
 import GenericSwiper from '../SharedComponents/GenericSwiper/GenericSwiper.component';
-import { ChefRestaurants } from '../../constants/interfaces/ChefRestaurants';
 import { DeviceBreakPoint } from '../../constants/types/DeviceBreakPoint';
 import { Skeleton } from '@mui/material';
 
