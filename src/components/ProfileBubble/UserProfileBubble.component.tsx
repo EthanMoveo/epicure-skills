@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, MenuItem, IconButton } from '@mui/material';
+import { Menu, MenuItem } from '@mui/material';
 
 import { ProfileBubble } from "./UserProfileBubble.styles";
 
