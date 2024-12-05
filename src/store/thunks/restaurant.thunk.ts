@@ -1,7 +1,5 @@
-// src/store/thunks/restaurantSwiper.thunk.ts
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { fetchRestaurantSwiperAdapter } from '../adapters/restaurant.adapter';
-import { Restaurant } from '../../constants/interfaces/Restaurant';
 
 export const fetchRestaurantSwiper = createAsyncThunk(
   'restaurantSwiper/fetchRestaurantSwiper',
@@ -9,7 +7,8 @@ export const fetchRestaurantSwiper = createAsyncThunk(
     try {
       const rawData = await fetchRestaurantSwiperAdapter();
 
-      const formattedData: Restaurant[] = rawData.data.restaurants.map((restaurant: any) => ({
+      const sectionTitle = rawData.data.sectionTitle;
+      const restaurants = rawData.data.restaurants.map((restaurant: any) => ({
         id: restaurant.id,
         name: restaurant.name,
         image: restaurant.image.url,
@@ -24,7 +23,7 @@ export const fetchRestaurantSwiper = createAsyncThunk(
         rating: restaurant.rating,
       }));
 
-      return formattedData;
+      return { sectionTitle, restaurants };
     } catch (error: any) {
       return rejectWithValue(error.message);
     }

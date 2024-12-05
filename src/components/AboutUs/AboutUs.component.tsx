@@ -9,13 +9,13 @@ import googleIcon from './../../assets/icons/google-icon.svg';
 
 
 const AboutUs: React.FC = () => {
-  const { content } = useSelector((state: RootState) => state.aboutUs);
+  const { sectionTitle, content } = useSelector((state: RootState) => state.aboutUs);
 
   return (
     <div className={styles.aboutUs}>
       <div className={styles.description}>
         <div>
-          <div className={styles.title}>About Us</div>
+          <div className={styles.title}>{sectionTitle}</div>
             <p>
           {content}
           </p>

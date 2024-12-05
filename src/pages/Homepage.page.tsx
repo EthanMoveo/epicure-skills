@@ -1,13 +1,12 @@
 import { useEffect } from 'react';
-import { Skeleton } from '@mui/material';
 import {useDispatch, useSelector } from 'react-redux';
+
 import {  RootState, AppDispatch } from '../store/store';
 import { fetchDishSwiper } from '../store/thunks/dish.thunk';
 import { fetchRestaurantSwiper } from '../store/thunks/restaurant.thunk';
 import { fetchChefOfTheWeek } from '../store/thunks/chefOfTheWeek.thunk';
 import { Fade, Slide } from 'react-awesome-reveal';
 import { Restaurant } from '../constants/interfaces/Restaurant';
-
 import Header from "../components/Header/Header.component";
 import Hero from "../components/Hero/Hero.component";
 import GenericSection from "../components/SharedComponents/GenericSection/GenericSection.component";
@@ -21,8 +20,8 @@ import { fetchHero } from '../store/thunks/hero.thunk';
 
 function HomePage() {
   const dispatch = useDispatch<AppDispatch>();
-  const { restaurantsSwiper } = useSelector((state: RootState) => state.restaurantSwiper);
-  const { dishesSwiper } = useSelector((state: RootState) => state.dishSwiper);
+  const { restaurantsSwiper, sectionTitle: restaurantsSectionTitle } = useSelector((state: RootState) => state.restaurantSwiper);
+  const { dishesSwiper, sectionTitle: dishesSectionTitle } = useSelector((state: RootState) => state.dishSwiper);
   const {chef, chefRestaurants } = useSelector((state: RootState) => state.chefWeek);
 
 
@@ -41,21 +40,20 @@ function HomePage() {
       <Header />
       <Hero />
       <GenericSection<Restaurant>
-        title="Popular restaurant in epicure" 
+        title={restaurantsSectionTitle} 
         items={restaurantsSwiper} 
         CardComponent={RestaurantCard}
         text="All Restaurants" 
       />
       <Slide triggerOnce duration={2000}>
         <GenericSection
-          title="Signature dish of" 
+          title={dishesSectionTitle}
           items={dishesSwiper} 
           CardComponent={DishCard}
         />
       </Slide>
       <Fade triggerOnce duration={1000} delay={500}>    
       <ChefSection 
-        title="Chef of the week"
         /> 
       </Fade>
 

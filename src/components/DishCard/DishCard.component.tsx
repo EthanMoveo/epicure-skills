@@ -34,18 +34,20 @@ const DishCard: React.FC<Dish> = ({ image, name, tags, ingredients, price }) => 
         <div className={styles.iconText}>
           <div className={styles.toolTipIconDiv}>
             <div className={styles.iconToolTip}>
-              {tags.map((tag) => (
+              {tags.length !== 0 ? tags.map((tag) => (
                 <img
                   key={tag.name}
                   src={`${STRAPI_BASE_URL}${tag.url}`}
                   alt={`${tag.name} icon`}
                   className={styles.icon}
                 />
-              ))}
+              )) : <div style={{height: '40px'}}></div>}
             </div>
-            <CustomToolTip title={getIconTooltip()} arrow>
+            {tags.length !== 0 ?    
+              <CustomToolTip title={getIconTooltip()} arrow>
               <img src={infoIcon} alt="info" className={styles.toolTip} />
-            </CustomToolTip>
+            </CustomToolTip> : <div style={{height: '26px'}}></div> }
+
           </div>
           <p className={styles.description}>{ingredients}</p>
         </div>

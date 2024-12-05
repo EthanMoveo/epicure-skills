@@ -1,18 +1,19 @@
-// src/store/slices/restaurantSwiper.slice.ts
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { fetchRestaurantSwiper } from '../thunks/restaurant.thunk';
 import { Restaurant } from '../../constants/interfaces/Restaurant';
 
 interface RestaurantSwiperState {
-    restaurantsSwiper: Restaurant[];
-    isLoading: boolean;
-    error: string | null;
+  sectionTitle: string; 
+  restaurantsSwiper: Restaurant[];
+  isLoading: boolean;
+  error: string | null;
 }
 
 const initialState: RestaurantSwiperState = {
-  restaurantsSwiper: [],
-  isLoading: false,
-  error: null,
+sectionTitle: '', 
+restaurantsSwiper: [],
+isLoading: false,
+error: null,
 };
 
 const restaurantSwiperSlice = createSlice({
@@ -25,9 +26,10 @@ const restaurantSwiperSlice = createSlice({
         state.isLoading = true;
         state.error = null;
       })
-      .addCase(fetchRestaurantSwiper.fulfilled, (state, action: PayloadAction<Restaurant[]>) => {
+      .addCase(fetchRestaurantSwiper.fulfilled, (state, action: PayloadAction<{ sectionTitle: string; restaurants: Restaurant[] }>) => {
         state.isLoading = false;
-        state.restaurantsSwiper = action.payload;
+        state.sectionTitle = action.payload.sectionTitle; 
+        state.restaurantsSwiper = action.payload.restaurants; 
       })
       .addCase(fetchRestaurantSwiper.rejected, (state, action: PayloadAction<any>) => {
         state.isLoading = false;
@@ -35,5 +37,6 @@ const restaurantSwiperSlice = createSlice({
       });
   },
 });
+
 
 export default restaurantSwiperSlice.reducer;

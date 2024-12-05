@@ -7,7 +7,8 @@ export const fetchAboutUs = createAsyncThunk(
     try {
       const response = await fetchAboutUsAdapter();
       const content = response.data.content
-      return content;
+      const sectionTitle = response.data.sectionTitle
+      return {sectionTitle, content};
     } catch (error: any) {
       return rejectWithValue(error.message || 'Error fetching About Us content');
     }

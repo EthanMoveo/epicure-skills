@@ -22,7 +22,7 @@ export const fetchChefOfTheWeek = createAsyncThunk(
         image: restaurant.image?.url || '',
       }));
 
-      return { chef: formattedChef, chefRestaurants: formattedRestaurants };
+      return { sectionTitle: rawChefData.data.sectionTitle ,chef: formattedChef, chefRestaurants: formattedRestaurants };
     } catch (error: any) {
       return rejectWithValue(error.message || 'Error fetching chef of the week data');
     }

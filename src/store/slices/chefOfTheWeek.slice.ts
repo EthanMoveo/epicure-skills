@@ -4,6 +4,7 @@ import { Chef } from '../../constants/interfaces/Chef';
 import { ChefRestaurants } from '../../constants/interfaces/ChefRestaurants';
 
 interface ChefOfTheWeekState {
+  sectionTitle: string ; 
   chef: Chef | null;
   chefRestaurants: ChefRestaurants[];
   isLoading: boolean;
@@ -11,12 +12,12 @@ interface ChefOfTheWeekState {
 }
 
 const initialState: ChefOfTheWeekState = {
+  sectionTitle: '', 
   chef: null,
   chefRestaurants: [],
   isLoading: false,
   error: null,
 };
-
 const chefWeekSlice = createSlice({
   name: 'chefOfTheWeek',
   initialState,
@@ -29,8 +30,9 @@ const chefWeekSlice = createSlice({
       })
       .addCase(
         fetchChefOfTheWeek.fulfilled,
-        (state, action: PayloadAction<{ chef: Chef; chefRestaurants: ChefRestaurants[] }>) => {
+        (state, action: PayloadAction<{sectionTitle: string; chef: Chef; chefRestaurants: ChefRestaurants[] }>) => {
           state.isLoading = false;
+          state.sectionTitle = action.payload.sectionTitle;
           state.chef = action.payload.chef;
           state.chefRestaurants = action.payload.chefRestaurants;
         }

@@ -10,21 +10,18 @@ import GenericSwiper from '../SharedComponents/GenericSwiper/GenericSwiper.compo
 import { DeviceBreakPoint } from '../../constants/types/DeviceBreakPoint';
 import { Skeleton } from '@mui/material';
 
-interface ChefSectionProps {
-  title: string;
-}
 
 const STRAPI_BASE_URL = import.meta.env.VITE_STRAPI_API_BASE_URL;
 
 
-const ChefSection: React.FC<ChefSectionProps> = ({ title }) => {
+const ChefSection: React.FC = () => {
   const isDesktop = useIsDesktop(DeviceBreakPoint.DESKTOP); 
-  const { chef, isLoading, chefRestaurants } = useSelector((state: RootState) => state.chefWeek);
+  const { chef, chefRestaurants, sectionTitle } = useSelector((state: RootState) => state.chefWeek);
 
   
   return (
     <section className={styles.sectionChef}>
-      <div className={styles.title}>{title}</div>
+      <div className={styles.title}>{sectionTitle}</div>
       {chef ? 
             <div className={styles.chefDescription}>
             <img src={`${STRAPI_BASE_URL}${chef?.image}`} className={styles.image} />

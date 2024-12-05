@@ -36,7 +36,7 @@ const Login: React.FC = () => {
   }, [username, password]);
 
   const handleResetError = () => {
-    dispatch(resetLoginState()); // Réinitialise uniquement les erreurs si nécessaire
+    dispatch(resetLoginState()); 
   };
 
   return (

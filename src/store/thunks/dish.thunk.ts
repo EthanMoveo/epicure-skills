@@ -1,6 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { fetchDishSwiperAdapter } from '../adapters/dish.adapter';
-import { Dish } from '../../constants/interfaces/Dish';
 
 export const fetchDishSwiper = createAsyncThunk(
   'dishSwiper/fetchDishSwiper',
@@ -8,7 +7,9 @@ export const fetchDishSwiper = createAsyncThunk(
     try {
       const rawData = await fetchDishSwiperAdapter();
 
-      const formattedData: Dish[] = rawData.data.dishes.map((dish: any) => ({
+      // Extract sectionTitle and dishes
+      const sectionTitle = rawData.data.sectionTitle;
+      const dishes = rawData.data.dishes.map((dish: any) => ({
         id: dish.id,
         name: dish.name,
         image: dish.image.url,
@@ -20,7 +21,7 @@ export const fetchDishSwiper = createAsyncThunk(
         })),
       }));
 
-      return formattedData;
+      return { sectionTitle, dishes };
     } catch (error: any) {
       return rejectWithValue(error.message);
     }
