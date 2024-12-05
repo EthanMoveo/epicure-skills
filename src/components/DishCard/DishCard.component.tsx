@@ -20,7 +20,7 @@ const DishCard: React.FC<Dish> = ({ image, name, tags, ingredients, price }) => 
       <div>
         <h1 style={{ textAlign: 'center', marginBottom: '5px' }}>Helpful Tip</h1>
         <p style={{ textAlign: 'center', fontSize: '16px' }}>
-          This icon indicates the following:<br />
+          {tags.length < 2 ? "This icon indicates the following:" : "These icons indicate the following:"}<br />
           {content}
         </p>
       </div>
